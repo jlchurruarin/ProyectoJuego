@@ -1,0 +1,1172 @@
+{
+    "Nivel": {
+            "groud_level": 0, 
+            "backgroud": "images/locations/forest/all.png",
+            "backgroud_sound": "sounds/nivel 1/background.mp3",
+            "jugador": {
+                "pos_x": 60,
+                "pos_y": 550
+            },
+            "plataformas": [
+                {
+                    "id": "Caja",
+                    "pos_y": 0,
+                    "pos_x": 0
+                },
+                {
+                    "id": "Caja",
+                    "pos_y": 0,
+                    "pos_x": 50
+                },
+                {
+                    "id": "Caja",
+                    "pos_y": 0,
+                    "pos_x": 100
+                },
+                {
+                    "id": "Caja",
+                    "pos_y": 0,
+                    "pos_x": 150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "id": "Caja",
+                    "pos_y": 0,
+                    "pos_x": 200,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "id": "Caja",
+                    "pos_y": 0,
+                    "pos_x": 250,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 500,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 550,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 600,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 650,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 700,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 750,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 800,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 850,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 900,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 950,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1000,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1100,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1200,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1250,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 0,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 50,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 100,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 200,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 250,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 500,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 550,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 600,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 650,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 700,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 750,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 800,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 850,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 900,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 950,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1000,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1100,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1200,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1250,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 750,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 50,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 100,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 150,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 250,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 300,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 350,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 450,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 500,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 550,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 600,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 650,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 700,
+                    "pos_x": 0,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 50,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 100,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 150,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 250,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 300,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 350,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 450,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 500,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 550,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 600,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 650,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 700,
+                    "pos_x": 1450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 600,
+                    "pos_x": 250,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 600,
+                    "pos_x": 300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 600,
+                    "pos_x": 350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 700,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 650,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 600,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 550,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 500,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 450,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 450,
+                    "pos_x": 50,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 450,
+                    "pos_x": 100,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 450,
+                    "pos_x": 150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 50,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 100,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 200,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 250,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 450,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 500,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 550,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 600,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 650,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 700,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 750,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 800,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 850,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 900,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 950,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 1000,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 1100,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 1150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 200,
+                    "pos_x": 1200,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 250,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 300,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 350,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 1000,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 950,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 900,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 850,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 800,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 750,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 700,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 650,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 400,
+                    "pos_x": 600,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 350,
+                    "pos_x": 1400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 350,
+                    "pos_x": 1350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 350,
+                    "pos_x": 1300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 450,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 500,
+                    "pos_x": 1050,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 500,
+                    "pos_x": 1100,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 500,
+                    "pos_x": 1150,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 500,
+                    "pos_x": 1200,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 650,
+                    "pos_x": 1300,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 650,
+                    "pos_x": 1350,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "pos_y": 650,
+                    "pos_x": 1400,
+                    "width": 50,
+                    "heigth": 50,
+                    "image_background": "images/tileset/forest/Objects/Crate.png"
+                }
+            ],
+            "trampas": [
+                {
+                    "pos_x": 600,
+                    "pos_y": 700,
+                    "width": 90,
+                    "heigth": 50, 
+                    "type": 0,
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 20
+                }
+            ],
+            "enemigos": [
+                {
+                    "type": "Cactus",
+                    "pos_x": 800,
+                    "pos_y": 550,
+                    "width": 98,
+                    "heigth": 100,
+                    "speed_walk": 4,
+                    "speed_run" : 4,
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "lives": 0,
+                    "trigger_range": 400
+                },
+                {
+                    "type": "Dust",
+                    "pos_x": 1200,
+                    "pos_y": 550,
+                    "width": 104,
+                    "heigth": 59,
+                    "speed_walk": 2,
+                    "speed_run" : 3,
+                    "walk_range": [150,0],
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "lives": 1,
+                    "trigger_range": 250
+                },
+                {
+                    "type": "Dust",
+                    "pos_x": 500,
+                    "pos_y": 100,
+                    "width": 104,
+                    "heigth": 59,
+                    "speed_walk": 2,
+                    "speed_run" : 3,
+                    "walk_range": [250,0],
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "lives": 1,
+                    "trigger_range": 400
+                }
+            ], 
+            "botin": [
+                {
+                    "pos_x": 625, 
+                    "pos_y": 600, 
+                    "width": 50,
+                    "heigth": 50,
+                    "path_imagen": "images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png",
+                    "speed_walk": 4,
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 10,
+                    "columnas": 15,
+                    "filas": 2,
+                    "start_frame": 1,
+                    "end_frame": 29,
+                    "normal_loop": "True"
+                },
+                {
+                    "pos_x": 950, 
+                    "pos_y": 300, 
+                    "width": 50,
+                    "heigth": 50,
+                    "path_imagen": "images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png",
+                    "speed_walk": 4,
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 10,
+                    "columnas": 15,
+                    "filas": 2,
+                    "start_frame": 1,
+                    "end_frame": 29,
+                    "normal_loop": "True"
+                },
+                {
+                    "pos_x": 100, 
+                    "pos_y": 300, 
+                    "width": 50,
+                    "heigth": 50,
+                    "path_imagen": "images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png",
+                    "speed_walk": 4,
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 10,
+                    "columnas": 15,
+                    "filas": 2,
+                    "start_frame": 1,
+                    "end_frame": 29,
+                    "normal_loop": "True"
+                },
+                {
+                    "pos_x": 1400, 
+                    "pos_y": 50, 
+                    "width": 50,
+                    "heigth": 50,
+                    "path_imagen": "images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png",
+                    "speed_walk": 4,
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 10,
+                    "columnas": 15,
+                    "filas": 2,
+                    "start_frame": 1,
+                    "end_frame": 29,
+                    "normal_loop": "True"
+                }
+            ],
+            "meta": [
+                {
+                    "pos_x": 50,
+                    "pos_y": 50,
+                    "width": 70,
+                    "heigth": 150, 
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 20
+                }
+            ]
+        }
+}

@@ -1,0 +1,108 @@
+import pygame
+from constantes import *
+from pygame.locals import *
+from gui_item_widget import Widget
+from gui_item_button import Button
+
+class Form():
+    forms_dict = {}
+    def __init__(self,name,master_surface,x,y,w,h,
+                f_get_value_chk_sounds,
+                f_get_value_chk_music,
+                f_get_value_volume_sounds,
+                f_get_value_volume_music,
+                background_image_path, 
+                background_color,color_border,active, background_sound_path=None):
+
+        self.forms_dict[name] = self
+        self.master_surface = master_surface
+        self.x = x
+        self.y = y
+        self.w = w
+        self.h = h
+
+        self.color_background = background_color
+        self.color_border = color_border
+        self.background_sound = pygame.mixer.music
+        self.background_sound_path = background_sound_path
+        self.f_get_value_chk_sounds = f_get_value_chk_sounds
+        self.f_get_value_chk_music = f_get_value_chk_music
+        self.f_get_value_volume_sounds = f_get_value_volume_sounds
+        self.f_get_value_volume_music = f_get_value_volume_music
+        self.surface = pygame.Surface((w,h), pygame.SRCALPHA, 32)
+        self.slave_rect = self.surface.get_rect()
+        self.slave_rect.x = x
+        self.slave_rect.y = y
+        self._active = active
+        self.x = x
+        self.y = y
+
+        if self._active and self.background_sound_path != None:
+            self.background_sound.load("{0}{1}".format(GAME_PATH, self.background_sound_path))
+            self.background_sound.set_volume(self.f_get_value_volume_music())
+            self.background_sound.play(-1)
+            
+        if(self.color_background != None):
+            self.surface.fill(self.color_background)
+
+        if(background_image_path != None):
+            self.image_background = pygame.image.load("{0}{1}".format(GAME_PATH, background_image_path))
+            self.image_background = pygame.transform.scale(self.image_background,(w, h)).convert_alpha()
+        else:
+            self.image_background = None
+
+        self.render()
+    
+    @property
+    def active(self):
+        return self._active
+    
+    @active.setter
+    def active(self, active):
+        if active and self.background_sound_path is not None:
+            if self.f_get_value_chk_music():
+                self.background_sound.load("{0}{1}".format(GAME_PATH, self.background_sound_path))
+                self.background_sound.set_volume(self.f_get_value_volume_music())
+                self.background_sound.play(-1)
+            else:
+                self.background_sound.stop()    
+        else:
+            self.background_sound.stop()
+
+        if active != self._active:
+            self.old_value_chk_sounds = self.f_get_value_chk_sounds()
+            self.old_value_chk_music = self.f_get_value_chk_music()
+            self.old_value_volume_sounds = self.f_get_value_volume_sounds()
+            self.old_value_volume_music = self.f_get_value_volume_music()
+
+        self._active = active
+
+    def set_active(self,name):
+        for aux_form in self.forms_dict.values():
+            aux_form.active = False
+            aux_form.reset_form()
+        self.forms_dict[name].active = True
+
+    def render(self):
+        if self.background_sound_path != None:
+            self.background_sound.set_volume(self.f_get_value_volume_music())
+        if self.image_background != None:
+            self.surface.blit(self.image_background,(0,0))
+
+    def reset_form(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        self.master_surface.blit(self.surface,self.slave_rect)
+
+    def actualizar_volumen(self, music_onoff, sounds_onoff, volumen_music, volumen_sounds):        
+        if not music_onoff:
+            volumen_music = 0
+
+        self.background_sound.set_volume(volumen_music)
+
+        for widget in self.lista_widget:
+            widget.actualizar_volumen(music_onoff, sounds_onoff, volumen_music, volumen_sounds)

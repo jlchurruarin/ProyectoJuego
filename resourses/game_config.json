@@ -1,0 +1,553 @@
+{
+    "Config": {
+            "Personajes": [ {
+                "id": "stink",
+                "path_sprites": "images/caracters/stink/",
+                "type_sprites": "SpriteSheet", 
+                "animations": ["walk", "idle", "jump", "shoot"],
+                "speed_walk": 8,
+                "speed_run": 10,
+                "width": 50,
+                "heigth": 90, 
+                "gravity": 8,
+                "jump_power": 18,
+                "frame_rate_ms": 55,
+                "move_rate_ms": 20,
+                "jump_height": 160,
+                "tiempo_maximo_invulnerable": 1500,
+                "proyectiles_maximos": 3,
+                "lives": 5,
+                "list_sounds": {
+                    "hit":"sounds/player/hit.mp3",
+                    "death": "sounds/player/hit.mp3"
+                }
+            } ],
+            "Plataformas": [
+                {
+                    "id": "Caja",
+                    "type": 1,
+                    "width": 50,
+                    "heigth": 50,
+                    "image": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "id": "Hielo",
+                    "type": 1,
+                    "width": 50,
+                    "heigth": 50,
+                    "image": "images/tileset/winter/Objects/IceBox.png"
+                }, 
+                {
+                    "id": "Desert-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Centro.png"
+                }, 
+                {
+                    "id": "Desert-Izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Izq.png"
+                }, 
+                {
+                    "id": "Desert-Der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Der.png"
+                },
+                {
+                    "id": "Desert-Full",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Full.png"
+                },
+                {
+                    "id": "Desert-wCorner",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Full-corner.png"
+                },
+                {
+                    "id": "Desert-Limit-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Limit-izq.png"
+                },
+
+                {
+                    "id": "Desert-H-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Desert/H-izq.png"
+                }, 
+                {
+                    "id": "Desert-H-der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Desert/H-der.png"
+                },
+                {
+                    "id": "Desert-H-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Desert/H-centro.png"
+                },  
+
+                {
+                    "id": "Graveyard-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Centro.png"
+                }, 
+                {
+                    "id": "Graveyard-Izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Izq.png"
+                }, 
+                {
+                    "id": "Graveyard-Der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Der.png"
+                },
+                {
+                    "id": "Graveyard-Full",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Full.png"
+                },
+                {
+                    "id": "Graveyard-wCorner",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Full-corner.png"
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Limit-izq.png"
+                }, 
+
+                {
+                    "id": "Graveyard-H-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Graveyard/H-izq.png"
+                }, 
+                {
+                    "id": "Graveyard-H-der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Graveyard/H-der.png"
+                },
+                {
+                    "id": "Graveyard-H-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Graveyard/H-centro.png"
+                },  
+
+                {
+                    "id": "City-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Centro.png"
+                }, 
+                {
+                    "id": "City-Izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Izq.png"
+                }, 
+                {
+                    "id": "City-Der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Der.png"
+                },
+                {
+                    "id": "City-Full",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Full.png"
+                },
+                {
+                    "id": "City-wCorner",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Full-corner.png"
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Limit-izq.png"
+                },
+
+
+                {
+                    "id": "City-H-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/City/H-izq.png"
+                }, 
+                {
+                    "id": "City-H-der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/City/H-der.png"
+                },
+                {
+                    "id": "City-H-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/City/H-centro.png"
+                }
+            ],
+            "Trampas": [
+                {
+                    "id": "Cactus",
+                    "width": 90,
+                    "heigth": 50, 
+                    "type": "Static",
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 0,
+                    "animations_dict": {
+                        "idle": {
+                            "image": "images/tileset/desert/Objects/Cactus_trampa2.png",
+                            "columnas":2,
+                            "filas":1,
+                            "start_frame":0,
+                            "end_frame":2
+                        }
+                    }
+                },
+                {
+                    "id": "Saw",
+                    "width": 100,
+                    "heigth": 100, 
+                    "type": "dynamic",
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 20,
+                    "speed_walk": 4,
+                    "move_range": [100,0],
+                    "animations": {
+                        "idle": {
+                            "image": "images/tileset/space_ship/Objects/Saw IDLE{1}.png",
+                            "start_frame":0,
+                            "end_frame":4
+                        }
+                    }
+                }
+            ],
+            "Enemigos": [
+                {
+                    "id": "Cactus",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/enemies/cactus/npc_cactus__x1_idle_png_1354833520.png",
+                            "columnas":6,
+                            "filas":7,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 1, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/enemies/cactus/npc_cactus__x1_idle_png_1354833520.png",
+                            "columnas":6,
+                            "filas":7,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 1, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "width": 98,
+                    "heigth": 100,
+                    "speed_walk": 4,
+                    "speed_run" : 4,
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "lives": 1,
+                    "trigger_range": 400,
+                    "dead_points": 100,
+                    "respawn_time": 5000
+                },
+                {
+                    "id": "Dust",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
+                            "columnas": 9,
+                            "filas": 20,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":1,
+                            "end_frame": 172, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
+                            "columnas": 9,
+                            "filas": 20,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":1,
+                            "end_frame": 172, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_r": {
+                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
+                            "columnas": 9,
+                            "filas": 20,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":1,
+                            "end_frame": 172, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_l": {
+                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
+                            "columnas": 9,
+                            "filas": 20,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":1,
+                            "end_frame": 172, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "width": 104,
+                    "heigth": 59,
+                    "speed_walk": 2,
+                    "speed_run" : 3,
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "trigger_range": 250,
+                    "walk_range": [150,0],
+                    "lives": 1,
+                    "dead_points": 100,
+                    "respawn_time": 10000
+                }
+            ], 
+            "Arrojables": [
+                {
+                    "id": "Piedra",
+                    "width": 25,
+                    "heigth": 25, 
+                    "type": "Static",
+                    "velocity": 8, 
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 0,
+                    "lives": 1,
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/Assets/Proyectiles/rock.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/Assets/Proyectiles/rock.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                },
+                {
+                    "id": "Saw",
+                    "width": 100,
+                    "heigth": 100, 
+                    "type": "dynamic",
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 20,
+                    "speed_walk": 4,
+                    "move_range": [100,0],
+                    "animations": {
+                        "idle": {
+                            "image": "images/tileset/space_ship/Objects/Saw IDLE{1}.png",
+                            "start_frame":0,
+                            "end_frame":4
+                        }
+                    }
+                }
+            ],
+            "Recolectables": [
+                {
+                    "id": "Star",
+                    "width": 50,
+                    "heigth": 50,
+                    "speed_walk": 4,
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 10,
+                    "animations_dict": {
+                        "idle": {
+                            "image": "images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png",
+                            "columnas":15,
+                            "filas":2,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":29, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                }
+            ],
+            "Objetivos": [
+                {
+                    "id": "Teleporter",
+                    "width": 70,
+                    "heigth": 150, 
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 20,
+                    "animations_dict": {
+                        "idle": {
+                            "id": "idle",
+                            "image": "images/machines/teleporter_visible/teleporter_visible__x1_portal_png_1354836401.png",
+                            "columnas":5,
+                            "filas":3,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":15, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                }
+            ],
+            "UI": [
+                {
+                    "id":"player_lives",
+                    "image":"images/gui/set_gui_01/Comic/Elements/heart.png",
+                    "pos_x": 75,
+                    "pos_y": 75,
+                    "width": 20,
+                    "heigth": 20
+
+                },
+                {
+                    "id":"cronometro",
+                    "image":"images/gui/set_gui_01/Pixel_Border/Elements/Tab01.png",
+                    "pos_x": 1290,
+                    "pos_y": 750,
+                    "width": 200,
+                    "heigth": 50,
+                    "text": "",
+                    "font": "Verdana",
+                    "font_size": 30,
+                    "font_color": [0,0,0],
+                    "text_offset_x": 0,
+                    "text_offset_y": 2
+                    
+                },
+                {
+                    "id": "puntuacion",
+                    "image": "images/gui/set_gui_01/Paper/Banner/Banner05.png",
+                    "pos_x": 1125,
+                    "pos_y": 75,
+                    "width": 300,
+                    "heigth": 50,
+                    "text": "000000",
+                    "font": "Verdana",
+                    "font_size": 30,
+                    "font_color": [240,240,240],
+                    "text_offset_x": 0,
+                    "text_offset_y": -5
+                }
+            ],
+            "Menus": [
+                {
+                    "name": "MenuPrincipal",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "botones_ancho": 260,
+                    "botones_alto": 50
+                },
+                {
+                    "name": "MenuConfiguracion",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "botones_ancho": 260,
+                    "botones_alto": 50,
+                    "slider_ancho": 300,
+                    "slider_alto": 50
+                }
+            ]
+        }
+}

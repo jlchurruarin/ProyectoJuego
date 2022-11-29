@@ -1,0 +1,435 @@
+{
+    "Nivel": {
+            "groud_level": 0, 
+            "background": [
+                {
+                    "image": "images/Background/Nivel 2/layer_02.png",
+                    "velocity": 0.1
+                },
+                {
+                    "image": "images/Background/Nivel 2/layer_03.png",
+                    "velocity": 0.2
+                },
+                {
+                    "image": "images/Background/Nivel 2/layer_04.png",
+                    "velocity": 0.3
+                },
+                {
+                    "image": "images/Background/Nivel 2/layer_05.png",
+                    "velocity": 0.5
+                },
+                {
+                    "image": "images/Background/Nivel 2/layer_01.png",
+                    "velocity": 0
+                }
+            ],
+            "background_sound": "sounds/nivel 1/background.mp3",
+            "jugador": {
+                "pos_x": 200,
+                "pos_y": 400
+            },
+            "plataformas": [
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 750,
+                    "pos_x": -100,
+                    "flip": true
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": -100
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": -100
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": -100
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 450,
+                    "pos_x": -100
+                },
+                {
+                    "id": "City-Der",
+                    "pos_y": 350,
+                    "pos_x": -100
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 0
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 100
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 200
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 300
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 400
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 750,
+                    "pos_x": 500
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 650,
+                    "pos_x": 500
+                },
+                {
+                    "id": "City-Der",
+                    "pos_y": 650,
+                    "pos_x": 600
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 750,
+                    "pos_x": 600,
+                    "flip":true
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 700,
+                    "flip":true
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 750,
+                    "pos_x": 800
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 650,
+                    "pos_x": 800
+                },
+                {
+                    "id": "City-Der",
+                    "pos_y": 650,
+                    "pos_x": 900
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 900
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 650,
+                    "pos_x": 1100
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 1100,
+                    "flip": true
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 650,
+                    "pos_x": 1200
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 550,
+                    "pos_x": 1200
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 550,
+                    "pos_x": 1300
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 450,
+                    "pos_x": 1300
+                },
+                {
+                    "id": "City-Der",
+                    "pos_y": 450,
+                    "pos_x": 1400
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": 1400
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 1400
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 750,
+                    "pos_x": 1400,
+                    "flip": true
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 650,
+                    "pos_x": 1300
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 1300
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 1200
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 750,
+                    "pos_x": 1500
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 1600
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 1700
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 1800
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 750,
+                    "pos_x": 1900
+                },
+                {
+                    "id": "City-Der",
+                    "pos_y": 750,
+                    "pos_x": 2000
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 750,
+                    "pos_x": 2200
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 750,
+                    "pos_x": 2300
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 650,
+                    "pos_x": 2300
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 2400
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 650,
+                    "pos_x": 2400
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 550,
+                    "pos_x": 2400
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 550,
+                    "pos_x": 2500
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 550,
+                    "pos_x": 2600
+                },
+                {
+                    "id": "City-centro",
+                    "pos_y": 550,
+                    "pos_x": 2700
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 650,
+                    "pos_x": 2500
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 2500
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 650,
+                    "pos_x": 2600
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 2600
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 650,
+                    "pos_x": 2700
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 2700
+                },
+                {
+                    "id": "City-wCorner",
+                    "pos_y": 550,
+                    "pos_x": 2800
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 450,
+                    "pos_x": 2800,
+                    "flip":true
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 350,
+                    "pos_x": 2800,
+                    "flip":true
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 250,
+                    "pos_x": 2800,
+                    "flip":true
+                },
+                {
+                    "id": "City-Izq",
+                    "pos_y": 150,
+                    "pos_x": 2800
+                }, 
+                {
+                    "id": "City-Der",
+                    "pos_y": 150,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 250,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 350,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 450,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 2800
+                },
+                {
+                    "id": "City-Full",
+                    "pos_y": 650,
+                    "pos_x": 2800
+                }
+            ],
+            "trampas": [
+                {
+                    "id": "Cactus",
+                    "pos_x": 700,
+                    "pos_y": 700
+                },
+                {
+                    "id": "Cactus",
+                    "pos_x": 1750,
+                    "pos_y": 700
+                }
+            ],
+            "enemigos": [
+                {
+                    "id": "Cactus",
+                    "pos_x": 550,
+                    "pos_y": 600
+                },
+                {
+                    "id": "Dust",
+                    "pos_x": 1700,
+                    "pos_y": 650
+                }
+            ], 
+            "recolectables": [
+                {
+                    "id": "Star",
+                    "pos_x": 725, 
+                    "pos_y": 500
+                }, 
+                {
+                    "id": "Star",
+                    "pos_x": 950, 
+                    "pos_y": 550
+                }, 
+                {
+                    "id": "Star",
+                    "pos_x": 1450, 
+                    "pos_y": 300
+                }, 
+                {
+                    "id": "Star",
+                    "pos_x": 1600, 
+                    "pos_y": 300
+                }
+            ],
+            "meta": [
+                {
+                    "id": "Teleporter",
+                    "pos_x": 2700,
+                    "pos_y": 400
+                }
+            ]
+        }
+}

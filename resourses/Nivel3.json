@@ -1,0 +1,409 @@
+{
+    "Nivel": {
+            "groud_level": 0, 
+            "background": [
+                
+                {
+                    "image": "images/Background/Nivel 3/layer_01.png",
+                    "velocity": 0
+                },
+                {
+                    "image": "images/Background/Nivel 3/layer_02.png",
+                    "velocity": 0.1
+                },
+                {
+                    "image": "images/Background/Nivel 3/layer_03.png",
+                    "velocity": 0.2
+                },
+                {
+                    "image": "images/Background/Nivel 3/layer_04.png",
+                    "velocity": 0.6
+                },
+                {
+                    "image": "images/Background/Nivel 3/layer_05.png",
+                    "velocity": 0.8
+                }
+            ],
+            "background_sound": "sounds/nivel 1/background.mp3",
+            "jugador": {
+                "pos_x": 200,
+                "pos_y": 400
+            },
+            "plataformas": [
+                {
+                    "id": "Graveyard-wCorner",
+                    "pos_y": 750,
+                    "pos_x": -100,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": -100
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": -100
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": -100
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 450,
+                    "pos_x": -100
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 350,
+                    "pos_x": -100
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 750,
+                    "pos_x": 0
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 750,
+                    "pos_x": 100
+                },
+                {
+                    "id": "Graveyard-wCorner",
+                    "pos_y": 750,
+                    "pos_x": 200
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 650,
+                    "pos_x": 200
+                },
+                {
+                    "id": "Graveyard-Full",
+                    "pos_y": 750,
+                    "pos_x": 300
+                },
+                {
+                    "id": "Graveyard-wCorner",
+                    "pos_y": 650,
+                    "pos_x": 300
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 550,
+                    "pos_x": 300
+                },
+                {
+                    "id": "Graveyard-Full",
+                    "pos_y": 750,
+                    "pos_x": 400
+                },
+                {
+                    "id": "Graveyard-Full",
+                    "pos_y": 650,
+                    "pos_x": 400
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 550,
+                    "pos_x": 400
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 500
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 500
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 550,
+                    "pos_x": 500
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 450,
+                    "pos_x": 600
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": 600,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 600,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 600,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 450,
+                    "pos_x": 700
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": 700
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 700
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 700
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 550,
+                    "pos_x": 800
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 800,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 800,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 400,
+                    "pos_x": 900
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 550,
+                    "pos_x": 900
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 900
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 900
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 400,
+                    "pos_x": 1000
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 650,
+                    "pos_x": 1000
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 1000,
+                    "flip":true
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 650,
+                    "pos_x": 1100
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 1100
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 750,
+                    "pos_x": 1200
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 400,
+                    "pos_x": 1200
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 750,
+                    "pos_x": 1300
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 400,
+                    "pos_x": 1300
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 750,
+                    "pos_x": 1400
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 750,
+                    "pos_x": 1500
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 300,
+                    "pos_x": 1500
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 750,
+                    "pos_x": 1600
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 300,
+                    "pos_x": 1600
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 750,
+                    "pos_x": 1700
+                },
+                {
+                    "id": "Graveyard-centro",
+                    "pos_y": 750,
+                    "pos_x": 1800
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 300,
+                    "pos_x": 1800
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 750,
+                    "pos_x": 1900
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 300,
+                    "pos_x": 1900
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 450,
+                    "pos_x": 2000
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": 2000,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 2000,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 2000,
+                    "flip": true
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 450,
+                    "pos_x": 2100
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 550,
+                    "pos_x": 2100
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 650,
+                    "pos_x": 2100
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "pos_y": 750,
+                    "pos_x": 2100
+                },
+                {
+                    "id": "Graveyard-Izq",
+                    "pos_y": 750,
+                    "pos_x": 2400
+                },
+                {
+                    "id": "Graveyard-Der",
+                    "pos_y": 750,
+                    "pos_x": 2500
+                }
+
+            ],
+            "trampas": [
+                {
+                    "id": "Cactus",
+                    "pos_x": 1750,
+                    "pos_y": 700
+                }
+            ],
+            "enemigos": [
+                {
+                    "id": "Cactus",
+                    "pos_x": 550,
+                    "pos_y": 400
+                },
+                {
+                    "id": "Dust",
+                    "pos_x": 1700,
+                    "pos_y": 650
+                }
+            ], 
+            "recolectables": [
+                {
+                    "id": "Star",
+                    "pos_x": 725, 
+                    "pos_y": 400
+                }, 
+                {
+                    "id": "Star",
+                    "pos_x": 950, 
+                    "pos_y": 300
+                }, 
+                {
+                    "id": "Star",
+                    "pos_x": 1550, 
+                    "pos_y": 200
+                }, 
+                {
+                    "id": "Star",
+                    "pos_x": 1900, 
+                    "pos_y": 650
+                }
+            ],
+            "meta": [
+                {
+                    "id": "Teleporter",
+                    "pos_x": 2500,
+                    "pos_y": 600
+                }
+            ]
+        }
+}
