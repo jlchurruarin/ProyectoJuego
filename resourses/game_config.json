@@ -547,7 +547,37 @@
                     "botones_alto": 50,
                     "slider_ancho": 300,
                     "slider_alto": 50
-                }
+                },
+                {
+                    "name": "MenuHighscore",
+                    "width": 800,
+                    "heigth": 700,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "label_bg": "images/Assets/Elements/Highscore_item_bg.png", 
+                    "label_ancho": 150,
+                    "label_alto": 50,
+                    "boton_alto": 50,
+                    "boton_ancho": 50
+                },
+                {
+                    "name": "NivelCompleto",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "boton_alto": 50,
+                    "boton_ancho": 50
+                },
+                {
+                    "name": "JuegoCompleto",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "boton_alto": 50,
+                    "boton_ancho": 50
+                }            
             ]
         }
 }

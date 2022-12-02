@@ -1,8 +1,7 @@
 {
     "Nivel": {
             "groud_level": 0, 
-            "background": [
-                
+            "background": [      
                 {
                     "image": "images/Background/Nivel 3/layer_01.png",
                     "velocity": 0

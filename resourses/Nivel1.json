@@ -16,6 +16,7 @@
                 }
             ],
             "background_sound": "sounds/nivel 1/background.mp3",
+            "next_level": "Nivel2",
             "jugador": {
                 "pos_x": 200,
                 "pos_y": 400
@@ -61,6 +62,11 @@
                     "id": "Desert-centro",
                     "pos_y": 750,
                     "pos_x": 100
+                },{
+                    "id": "Desert-wCorner",
+                    "pos_y": 150,
+                    "pos_x": 100,
+                    "flip": true
                 },
                 {
                     "id": "Desert-centro",
@@ -392,6 +398,11 @@
                     "id": "Dust",
                     "pos_x": 1700,
                     "pos_y": 650
+                },
+                {
+                    "id": "Dust",
+                    "pos_x": 200,
+                    "pos_y": 150
                 }
             ], 
             "recolectables": [
@@ -421,6 +432,11 @@
                     "id": "Teleporter",
                     "pos_x": 2700,
                     "pos_y": 400
+                },
+                {
+                    "id": "Teleporter",
+                    "pos_x": 700,
+                    "pos_y": 600
                 }
             ]
         }

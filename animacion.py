@@ -121,6 +121,7 @@ class Animacion:
     def __getSpritesListFromSpriteSheet(self, path, w, h, columnas,filas,flip=False, step= 1):
         lista_frames = []
         surface_imagen = pygame.image.load(path)
+
         fotograma_ancho = int(surface_imagen.get_width()/columnas)
         fotograma_alto = int(surface_imagen.get_height()/filas)
         
@@ -128,7 +129,7 @@ class Animacion:
             for columna in range(0,columnas,step):
                 x = columna * fotograma_ancho
                 y = fila * fotograma_alto
-                surface_fotograma = surface_imagen.subsurface(x,y,fotograma_ancho,fotograma_alto)
+                surface_fotograma = surface_imagen.subsurface(x,y,fotograma_ancho,fotograma_alto).convert_alpha()
                 if(flip):
                     surface_fotograma = pygame.transform.flip(surface_fotograma,True,False)
                 if(w != 0 and h != 0):

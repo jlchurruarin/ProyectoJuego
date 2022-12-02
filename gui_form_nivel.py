@@ -24,12 +24,16 @@ class FormNivel(Form):
     def __init__(self,name,master_surface,
                         game_config,
                         player_id,
-                        f_game_add_points, f_game_add_time, 
+                        f_game_add_points, f_game_add_time, f_game_get_time,
                         f_get_value_chk_sounds, 
                         f_get_value_chk_music, 
                         f_get_value_volume_sounds, 
                         f_get_value_volume_music,
                         f_set_game_volumen,
+                        f_game_draw_bg,
+                        f_game_get_points,
+                        f_game_get_vidas_restantes,
+                        f_game_set_vidas_restantes,
                         active=False):
 
         self.game_config = game_config
@@ -45,8 +49,11 @@ class FormNivel(Form):
                         f_get_value_chk_music=f_get_value_chk_music,
                         f_get_value_volume_sounds=f_get_value_volume_sounds,
                         f_get_value_volume_music=f_get_value_volume_music,
+                        f_game_draw_bg=f_game_draw_bg, 
                         background_image_path=None,background_color= None,color_border=None,active=active, background_sound_path=self.level_config["background_sound"])
 
+
+        self.name = name
         self.player_id = player_id
 
         self.f_game_add_points = f_game_add_points
@@ -55,9 +62,16 @@ class FormNivel(Form):
         self.f_get_value_chk_music = f_get_value_chk_music
         self.f_get_value_volume_sounds = f_get_value_volume_sounds
         self.f_set_game_volumen = f_set_game_volumen
+        self.f_game_get_points = f_game_get_points
+        self.f_game_get_time = f_game_get_time
+        self.f_game_get_vidas_restantes = f_game_get_vidas_restantes
+        self.f_game_set_vidas_restantes = f_game_set_vidas_restantes
 
         self.tiempo_print = 0
         self.move_x = 0
+
+        self.flag_k_escape = False
+
         self.load_widwets()
 
         '''
@@ -71,8 +85,6 @@ class FormNivel(Form):
     def load_widwets(self):
 
         self.balas_controller = BalasController(f_remove_widwet= self.remove_winget)
-        self.endgame = False
-        self.points = 0
         self.lista_widget = []
         self.lista_plataformas = []
         self.lista_enemigos = []
@@ -93,19 +105,20 @@ class FormNivel(Form):
 
         self.puntuacion = Puntuación(   master_form=self,
                                         config= self.get_item_listdicts("puntuacion", self.game_config["UI"]), 
-                                        f_get_points= self.get_points
+                                        f_get_points= self.f_game_get_points
                                         )
     
         self.lista_widget.append(self.puntuacion)
         
         
         player_config = self.get_item_listdicts(self.player_id, self.game_config["Personajes"])
-
+        vidas = self.f_game_get_vidas_restantes()
         self.player = Player(
                     master_form= self, 
                     x= self.level_config["jugador"]["pos_x"], 
                     y= self.level_config["jugador"]["pos_y"], 
                     config=player_config,
+                    vidas_restantes=vidas,
                     f_add_bullet=self.add_bullet,
                     f_get_my_bullets= self.balas_controller.get_my_bullets_quantity,
                     f_get_chk_sounds= self.f_get_value_chk_sounds,
@@ -168,7 +181,7 @@ class FormNivel(Form):
                                             x= enemigo["pos_x"], 
                                             y= enemigo["pos_y"],
                                             config= self.get_item_listdicts("Cactus", self.game_config["Enemigos"]), 
-                                            f_add_points= self.add_points,
+                                            f_add_points= self.f_game_add_points,
                                             f_add_bullet= self.add_bullet,
                                             f_get_game_volume = self.f_get_value_volume_sounds,
                                             f_get_coords_player = self.player.get_coords,
@@ -183,7 +196,7 @@ class FormNivel(Form):
                                             x= enemigo["pos_x"], 
                                             y= enemigo["pos_y"],
                                             config= self.get_item_listdicts("Dust", self.game_config["Enemigos"]), 
-                                            f_add_points= self.add_points,
+                                            f_add_points= self.f_game_add_points,
                                             f_get_coords_player = self.player.get_coords,
                                             f_get_game_volume = self.f_get_value_volume_sounds,
                                             lista_plataformas=self.lista_plataformas
@@ -198,7 +211,7 @@ class FormNivel(Form):
                                     x= botin["pos_x"], 
                                     y= botin["pos_y"],
                                     config=self.get_item_listdicts(botin["id"], self.game_config["Recolectables"]),
-                                    f_add_points= self.add_points,)
+                                    f_add_points= self.f_game_add_points)
 
                 self.lista_widget.append(new_botin)
                 self.lista_botines.append(new_botin)
@@ -234,14 +247,31 @@ class FormNivel(Form):
         return dict_json["Nivel"]
 
     def cargar_endgame(self, parametro="MenuPrincipal"):
-        #if not self.muerto: guardar puntuación y llevar a siguiente nivel
-        self.set_active(parametro)
+        if not self.player.muerto: #guardar puntuación y llevar a siguiente nivel
+            self.f_game_add_time(self.cronometro.get_tiempo_restante())
+            self.f_game_set_vidas_restantes(self.player.get_lives())
+            self.form_data["nivel_tiempo_restante"] = self.cronometro.get_tiempo_restante()
+            self.form_data["total_tiempo_restante"] = self.f_game_get_time()
+            self.form_data["vidas_restantes"] = self.f_game_get_vidas_restantes()
+            self.form_data["nivel_puntuacion"] = self.f_game_get_points()
+            self.set_active("NivelCompleto")
+        else:
+            self.set_active(parametro)
 
     def update_lists(self, delta_ms):
         for controller in self.lista_controllers:
             controller.update_list(delta_ms)
 
     def events(self,keys):
+
+        if keys[pygame.K_ESCAPE]:
+            if not self.flag_k_escape:
+                self.flag_k_escape = True
+                self.form_data["pause"] = True
+                self.form_data["last_form"] = self.name
+                self.set_active("MenuPrincipal")
+        else:
+            self.flag_k_escape = False
 
         if(keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT]):
             self.move_x = self.player.speed_walk
@@ -280,12 +310,16 @@ class FormNivel(Form):
         self.enemy_controller.verificar_triggers(self.player.get_coords)
     
         if self.player.muerto or self.cronometro.timeout:
-            self.endgame = True
+            self.form_data["pause"] = False
             self.cargar_endgame()
 
     def reset_form(self):
-        self.load_widwets()
-        pass
+        if self.form_data["pause"] != True:
+            player_config = self.get_item_listdicts(self.player_id, self.game_config["Personajes"])
+            if self.active:
+                self.f_game_set_vidas_restantes(player_config["lives"])
+            self.load_widwets()
+        super().reset_form()
 
     def draw(self): 
         super().draw()
@@ -356,7 +390,12 @@ class FormNivel(Form):
         for teleport in self.lista_metas:
             if teleport.rect_teleport.colliderect(self.player.rect_death_collition):
                 teleport.hit()
-                self.endgame = True
+                self.form_data["pause"] = False
+                if "next_level" in self.level_config:
+                    self.form_data["last_form"] = self.level_config["next_level"]
+                else:
+                    #Verificar puntuación con BD y en caso de entrar en TOP permitir cargar nombre
+                    self.form_data["last_form"] = "JuegoCompleto"
                 self.cargar_endgame()
 
     
@@ -385,12 +424,3 @@ class FormNivel(Form):
 
     def remove_winget(self, item):
         self.lista_widget.remove(item)
-
-    #GAME CONTROLLER
-    def add_points(self, points):
-        self.points += points
-
-    def get_points(self):
-        return self.points
-        
-        

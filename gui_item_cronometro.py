@@ -32,3 +32,5 @@ class Cronometro(Widget):
             self._text = "{0}:{1}".format(minutos_str, segundos_str)
             self.render()
 
+    def get_tiempo_restante(self):
+        return int(self.tiempo_ms/1000)

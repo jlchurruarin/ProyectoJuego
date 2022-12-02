@@ -24,6 +24,7 @@
                 }
             ],
             "background_sound": "sounds/nivel 1/background.mp3",
+            "next_level": "Nivel3",
             "jugador": {
                 "pos_x": 200,
                 "pos_y": 400

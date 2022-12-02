@@ -10,9 +10,9 @@ from gui_item_rangebar import RangeBar
 
 
 class FormMenuConfiguracion(Form):
-    def __init__(self,config,master_surface,
+    def __init__(self,config, master_surface,
                     f_get_value_chk_sounds, f_get_value_chk_music, f_get_value_volume_sounds, f_get_value_volume_music,
-                    f_set_volumen, 
+                    f_set_volumen, f_game_draw_bg,
                     active=False):
 
         for item in config:
@@ -26,6 +26,7 @@ class FormMenuConfiguracion(Form):
                         f_get_value_chk_music=f_get_value_chk_music,
                         f_get_value_volume_sounds=f_get_value_volume_sounds,
                         f_get_value_volume_music=f_get_value_volume_music,
+                        f_game_draw_bg=f_game_draw_bg,
                         background_color=None, color_border=None,
                         background_image_path=self.background_image_path, 
                         active=active, background_sound_path=self.background_sound_path)

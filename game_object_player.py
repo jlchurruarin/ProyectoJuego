@@ -9,7 +9,7 @@ from constantes import *
 class Player(GameObject):
 
     #def __init__(self,x,y,speed_walk,speed_run,gravity,jump_power,frame_rate_ms,move_rate_ms,jump_height,scale=100,lives=5) -> None:
-    def __init__(self,master_form, x, y, config,
+    def __init__(self,master_form, x, y, config, vidas_restantes,
                     f_add_bullet, f_get_my_bullets, f_get_chk_sounds, f_get_value_volume_sounds):
 
         for item in config:
@@ -137,6 +137,7 @@ class Player(GameObject):
             self.shoot_r
         ]
 
+        self.lives = vidas_restantes
         self.invulnerable = False
         self.tiempo_transcurrido_invulnerable = 0
         self.tiempo_max_invulnerable = 1500

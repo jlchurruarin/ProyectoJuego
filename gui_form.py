@@ -6,15 +6,19 @@ from gui_item_button import Button
 
 class Form():
     forms_dict = {}
+    form_data = {}
+
     def __init__(self,name,master_surface,x,y,w,h,
                 f_get_value_chk_sounds,
                 f_get_value_chk_music,
                 f_get_value_volume_sounds,
                 f_get_value_volume_music,
+                f_game_draw_bg,
                 background_image_path, 
                 background_color,color_border,active, background_sound_path=None):
 
         self.forms_dict[name] = self
+        self.form_data["pause"] = False
         self.master_surface = master_surface
         self.x = x
         self.y = y
@@ -29,6 +33,7 @@ class Form():
         self.f_get_value_chk_music = f_get_value_chk_music
         self.f_get_value_volume_sounds = f_get_value_volume_sounds
         self.f_get_value_volume_music = f_get_value_volume_music
+        self.f_game_draw_bg=f_game_draw_bg
         self.surface = pygame.Surface((w,h), pygame.SRCALPHA, 32)
         self.slave_rect = self.surface.get_rect()
         self.slave_rect.x = x
@@ -79,9 +84,8 @@ class Form():
 
     def set_active(self,name):
         for aux_form in self.forms_dict.values():
-            aux_form.active = False
             aux_form.reset_form()
-        self.forms_dict[name].active = True
+        self.forms_dict[name].activate_form()
 
     def render(self):
         if self.background_sound_path != None:
@@ -90,19 +94,13 @@ class Form():
             self.surface.blit(self.image_background,(0,0))
 
     def reset_form(self):
-        pass
+        self.active = False
+
+    def activate_form(self):
+        self.active = True
 
     def update(self):
         pass
 
     def draw(self):
         self.master_surface.blit(self.surface,self.slave_rect)
-
-    def actualizar_volumen(self, music_onoff, sounds_onoff, volumen_music, volumen_sounds):        
-        if not music_onoff:
-            volumen_music = 0
-
-        self.background_sound.set_volume(volumen_music)
-
-        for widget in self.lista_widget:
-            widget.actualizar_volumen(music_onoff, sounds_onoff, volumen_music, volumen_sounds)
