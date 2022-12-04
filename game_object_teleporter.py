@@ -8,7 +8,7 @@ class Teleporter(GameObject):
 
     lista_teleports = []
 
-    def __init__(self, master_form, x, y, config, f_get_value_volume_sounds):
+    def __init__(self, master_form, x, y, config, f_get_effects_state, f_get_value_volume_sounds):
 
         for item in config:
             setattr(self, item, config[item])
@@ -44,6 +44,7 @@ class Teleporter(GameObject):
         self.rect.y = y
 
         self.f_get_value_volume_sounds = f_get_value_volume_sounds
+        self.f_get_effects_state = f_get_effects_state
 
         self.sounds = {}
 
@@ -76,4 +77,6 @@ class Teleporter(GameObject):
             rect.x += delta_x
 
     def hit(self):
-        self.sounds["hit"].play()
+        if self.f_get_effects_state():
+            self.sounds["hit"].set_volume(self.f_get_value_volume_sounds())
+            self.sounds["hit"].play()

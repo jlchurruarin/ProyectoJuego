@@ -11,10 +11,6 @@ from gui_item_progressbar import ProgressBar
 
 class FormMenuPrincipal(Form):
     def __init__(self,config,master_surface,
-                    f_get_value_chk_sounds,
-                    f_get_value_chk_music,
-                    f_get_value_volume_sounds,
-                    f_get_value_volume_music,
                     f_game_draw_bg,
                     f_game_set_player_id,
                     active=False):
@@ -26,10 +22,6 @@ class FormMenuPrincipal(Form):
         y=ALTO_VENTANA/2 - self.heigth/2
 
         super().__init__(name=self.name,master_surface=master_surface,x=x,y=y,w=self.width,h=self.heigth,
-                        f_get_value_chk_sounds=f_get_value_chk_sounds,
-                        f_get_value_chk_music=f_get_value_chk_music,
-                        f_get_value_volume_sounds=f_get_value_volume_sounds,
-                        f_get_value_volume_music=f_get_value_volume_music,
                         f_game_draw_bg=f_game_draw_bg,
                         background_color = None,
                         color_border = None,
@@ -89,7 +81,11 @@ class FormMenuPrincipal(Form):
 
     def cargar_nivel(self, parametro):
         if parametro == "Nivel1":
-            self.f_game_set_player_id("stink")
+            self.form_data["nivel_puntuacion"] = 0
+            #self.form_data["vidas_restantes"]
+            self.form_data["total_tiempo_restante"] = 0
+            #TODO
+            self.f_game_set_player_id("cowgirl")
         self.set_active(parametro)
 
     def continuar_nivel(self, parametro):

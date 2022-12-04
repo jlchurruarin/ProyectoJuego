@@ -14,10 +14,6 @@ class Game():
         self.lista_forms = []
         self.config_path = "resourses/game_config.json"
 
-        self.music_onoff = False
-        self.music_volume = 0
-        self.sounds_onoff = False
-        self.sounds_volume = 0
         self.screen = screen
 
         self.vidas_restantes = 0
@@ -59,29 +55,27 @@ class Game():
 
     def set_player_id(self, id):
         config = list(filter(lambda dict: dict["id"] == id, self.config["Personajes"]))
-        print(config[0]["lives"])
+        self.player_id = id
         self.vidas_restantes = config[0]["lives"]
+        self.points = 0
+        self.total_time = 0
 
-    def get_chk_sounds(self):
-        return self.sounds_onoff
-
-    def get_chk_music(self):
-        return self.music_onoff
-
-    def get_volume_sounds(self):
-        return self.sounds_volume
-
-    def get_volume_music(self):
-        return self.music_volume
+    def get_player_id(self):
+        return self.player_id
 
     def get_game_min_top_item(self):
-        if len(self.ranking) == 0:
+        if len(self.ranking) < 10:
+            print(len(self.ranking))
             self.ranking = [{
                     "nombre": "",
                     "puntaje": 0,
                     "tiempo_restante": 0
                 }]
         return self.ranking[-1]
+
+    def get_raking(self):
+        self.load_ranking()
+        return self.ranking
 
     def get_menu_config(self, name):
         config = list(filter(lambda dict: dict["name"] == name, self.config["Menus"]))
@@ -90,29 +84,6 @@ class Game():
         else:
             retorno = False
         return retorno
-
-    def set_volumen(self, music_onoff=None, sounds_onoff=None, music_volume=None, sounds_volume=None):
-        if music_onoff == None:
-            self.music_onoff = self.get_chk_music()
-        else:
-            self.music_onoff = music_onoff
-        
-        if music_volume == None:
-            self.music_volume = self.get_volume_music()
-        else:
-            self.music_volume = music_volume
-
-        if sounds_onoff == None:
-            self.sounds_onoff = self.get_chk_sounds()
-        else:
-            self.sounds_onoff = sounds_onoff
-
-        if sounds_volume == None:
-            self.sounds_volume = self.get_volume_sounds()
-        else:
-            self.sounds_volume = sounds_volume
-
-        Bullet.actualizar_volumen(Bullet, self.music_onoff, self.sounds_onoff, self.music_volume, self.sounds_volume)
 
     def load_config(self):
         config_path = "{0}{1}".format(GAME_PATH,self.config_path)

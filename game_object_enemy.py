@@ -102,7 +102,7 @@ class Enemy(GameObject):
     def do_animation(self, delta_ms):
         super().do_animation(delta_ms)
 
-    def trigger(self, f_add_bullet):
+    def trigger(self, f_trigger):
         pass
 
     def draw(self):

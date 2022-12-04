@@ -14,7 +14,7 @@ class RangeBar(Widget):
         super().__init__(master,x,y,w,h,None,None,image_background,text,font,font_size,font_color, text_offset_y=-15, img_coord_y=h/2)
 
         self.f_get_value = f_get_value 
-        self.value = f_get_value() * 100
+        self.value = int(f_get_value() * 100)
 
         if image_progress != None:
             self.surface_element = pygame.image.load("{0}{1}".format(GAME_PATH,image_progress))
@@ -45,7 +45,7 @@ class RangeBar(Widget):
         
 
     def update(self, lista_eventos, delta_ms=None):
-        self.value = self.f_get_value() * 100
+        self.value = int(self.f_get_value() * 100)
         mousePos = pygame.mouse.get_pos()
         if self.slave_rect_collide.collidepoint(mousePos):
             if(pygame.mouse.get_pressed()[0]):

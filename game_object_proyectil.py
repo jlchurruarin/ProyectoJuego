@@ -6,10 +6,8 @@ from constantes import *
 
 class Bullet(GameObject):
 
-    sounds_effects = True
-
-    def __init__(self,master_form, owner, x, y, direction, config, f_get_game_volume
-                            ) -> None:
+    def __init__(self,master_form, owner, x, y, direction, config, 
+                f_get_effects_state, f_get_effects_volumen) -> None:
 
         for item in config:
             setattr(self, item, config[item])
@@ -40,7 +38,10 @@ class Bullet(GameObject):
             self.animations.append(getattr(self, animation))
 
         self.direction = direction
-        self.animation = self.idle_r
+        if self.direction == DIRECTION_R:
+            self.animation = self.idle_r
+        else:
+            self.animation = self.idle_l
         self.image_background = self.animation.next_frame()
         self.rect = self.image_background.get_rect()
         self.rect.x = x
@@ -48,14 +49,15 @@ class Bullet(GameObject):
         self.owner = owner
         self.muerto = False
 
-        self.f_get_game_volume = f_get_game_volume
+        self.f_get_effects_state = f_get_effects_state
+        self.f_get_effects_volumen = f_get_effects_volumen
         self.sounds = {}
 
         self.sounds["hit"] = pygame.mixer.Sound("{0}sounds/objects/rock/hit.mp3".format(GAME_PATH))
         self.sounds["death"] = pygame.mixer.Sound("{0}sounds/objects/rock/hit.mp3".format(GAME_PATH))
 
         for sound in self.sounds:
-            self.sounds[sound].set_volume(self.f_get_game_volume())
+            self.sounds[sound].set_volume(self.f_get_effects_volumen())
 
         self.rect_kill_collition = pygame.Rect(self.rect.x, self.rect.y , self.rect.w , self.rect.h)
         self.rects = [self.rect_kill_collition]
@@ -93,10 +95,12 @@ class Bullet(GameObject):
     def hit(self):
         if not self.muerto:
             super().hit()
-            if self.sounds_effects:
+            if self.f_get_effects_state():
                 if not self.muerto:
+                    self.sounds["hit"].set_volume(self.f_get_effects_volumen())
                     self.sounds["hit"].play()
                 else:
+                    self.sounds["death"].set_volume(self.f_get_effects_volumen())
                     self.sounds["death"].play()
 
     def actualizar_volumen(self, music_onoff, sounds_onoff, volumen_music, volumen_sounds):

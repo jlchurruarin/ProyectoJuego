@@ -93,12 +93,7 @@ class Cactus(Enemy):
 
     def shoot(self):
         if not self.disparando:
-            self.f_add_bullet(owner=self, x=self.x, y=self.y, w=50 , h=50, 
-                        direction=self.direction,
-                        velocity=5, 
-                        move_rate_ms=self.move_rate_ms, 
-                        frame_rate_ms=self.frame_rate_ms, 
-                        type= PIEDRA, lives=1, f_get_game_volume=self.f_get_game_volume)
+            self.f_add_bullet(owner=self, x=self.x, y=self.y, id=self.proyectil_id, direction=self.direction)
             self.tiempo_transcurrido_proyectil = 0
             self.disparando = True
 

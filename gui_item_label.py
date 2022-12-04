@@ -10,7 +10,7 @@ class Label(Widget):
 
         self.render()
 
-    def update(self, delta_ms=None):
+    def update(self, lista_eventos, delta_ms=None):
         self.render()
 
     

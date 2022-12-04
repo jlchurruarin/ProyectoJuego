@@ -16,7 +16,7 @@ class Player(GameObject):
             setattr(self, item, config[item])
 
         super().__init__(master_form=master_form, x=x, y=y, w=self.width, h=self.heigth, frame_rate_ms=self.frame_rate_ms, move_rate_ms=self.move_rate_ms)
-
+        '''
         self.walk_r = Animacion(
             path="images/caracters/stink/walk.png",
             w=self.width,
@@ -136,14 +136,36 @@ class Player(GameObject):
             self.shoot_l,
             self.shoot_r
         ]
+        '''
+
+        self.animations = []
+
+        for animation in config["animations_dict"]:
+            new_animation = Animacion(
+                            path= config["animations_dict"][animation]["image"],
+                            w=self.width,
+                            h=self.heigth,
+                            columnas= config["animations_dict"][animation]["columnas"],
+                            filas= config["animations_dict"][animation]["filas"],
+                            quantity = config["animations_dict"][animation]["quantity"],
+                            flip= config["animations_dict"][animation]["flip"],
+                            start_frame= config["animations_dict"][animation]["start_frame"],
+                            end_frame= config["animations_dict"][animation]["end_frame"],
+                            step = config["animations_dict"][animation]["step"],
+                            normal_loop= config["animations_dict"][animation]["normal_loop"],
+                            inverted_loop = config["animations_dict"][animation]["inverted_loop"],
+                            last_frame_loop = config["animations_dict"][animation]["last_frame_loop"]
+                        )
+            setattr(self, animation, new_animation)
+
+            self.animations.append(getattr(self, animation))
 
         self.lives = vidas_restantes
         self.invulnerable = False
         self.tiempo_transcurrido_invulnerable = 0
         self.tiempo_max_invulnerable = 1500
-        self.score = 0
         self.tiempo_transcurrido_move = 0
-        self._animation = self.stay_r
+        self._animation = self.idle_r
         self.direction = DIRECTION_R
         self.image_background = self.animation.next_frame()
         self.rect = self.image_background.get_rect()
@@ -152,8 +174,6 @@ class Player(GameObject):
         
         self.move_x = 0
         self.move_y = 0
-
-        self.proyectiles_maximos = 3
 
         self.f_get_my_bullets = f_get_my_bullets
         self.f_add_bullet = f_add_bullet
@@ -171,8 +191,6 @@ class Player(GameObject):
 
         self.is_jump = False
         self.is_shoot = False
-        self.is_knife = False
-        self.is_falling = False
 
         self.y_start_jump = 0
         self.enable_jump = True
@@ -221,11 +239,11 @@ class Player(GameObject):
 
 
     def stay(self):
-        if(self.animation != self.stay_r and self.animation != self.stay_l):
+        if(self.animation != self.idle_r and self.animation != self.idle_l):
             if(self.direction == DIRECTION_R):
-                self.animation = self.stay_r
+                self.animation = self.idle_r
             else:
-                self.animation = self.stay_l
+                self.animation = self.idle_l
             self.move_x = 0
             self.move_y = 0
             
@@ -244,13 +262,7 @@ class Player(GameObject):
                 #            velocity, direction,
                 #            frame_rate_ms, move_rate_ms, 
                 #            type, lives
-
-                self.f_add_bullet(owner=self, x=self.x, y= self.y, w=50 , h=50, 
-                                direction=self.direction,
-                                velocity=10, 
-                                move_rate_ms=self.move_rate_ms, 
-                                frame_rate_ms=self.frame_rate_ms, 
-                                type= PIEDRA, lives=1, f_get_game_volume=self.f_get_value_volume_sounds)
+                self.f_add_bullet(owner=self, x=self.x, y= self.y, id=self.proyectil_id, direction=self.direction)
                 
 
             self.is_shoot = True
@@ -323,7 +335,7 @@ class Player(GameObject):
 
         if(self.rect_ground_collition.y >= GROUND_LEVEL + 100):
 
-            self.lives = 0
+            self.lives = 1
             self.hit()
             retorno = False
         else:
@@ -386,10 +398,13 @@ class Player(GameObject):
             super().hit()
             self.invulnerable = True
             self.tiempo_transcurrido_invulnerable = 0
-            if self.lives <= 0:
-                self.sounds["death"].play()
-            else:
-                self.sounds["hit"].play()
+            if self.f_get_chk_sounds():
+                if self.lives <= 0:
+                    self.sounds["death"].set_volume(self.f_get_value_volume_sounds())
+                    self.sounds["death"].play()
+                else:
+                    self.sounds["hit"].set_volume(self.f_get_value_volume_sounds())
+                    self.sounds["hit"].play()
 
     def get_lives(self):
         return self.lives

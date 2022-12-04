@@ -23,13 +23,8 @@ import json
 class FormNivel(Form):
     def __init__(self,name,master_surface,
                         game_config,
-                        player_id,
+                        f_get_player_id,
                         f_game_add_points, f_game_add_time, f_game_get_time,
-                        f_get_value_chk_sounds, 
-                        f_get_value_chk_music, 
-                        f_get_value_volume_sounds, 
-                        f_get_value_volume_music,
-                        f_set_game_volumen,
                         f_game_draw_bg,
                         f_game_get_points,
                         f_game_get_vidas_restantes,
@@ -45,23 +40,15 @@ class FormNivel(Form):
         h=ALTO_VENTANA
 
         super().__init__(name,master_surface,x,y,w,h,
-                        f_get_value_chk_sounds=f_get_value_chk_sounds,
-                        f_get_value_chk_music=f_get_value_chk_music,
-                        f_get_value_volume_sounds=f_get_value_volume_sounds,
-                        f_get_value_volume_music=f_get_value_volume_music,
                         f_game_draw_bg=f_game_draw_bg, 
                         background_image_path=None,background_color= None,color_border=None,active=active, background_sound_path=self.level_config["background_sound"])
 
 
         self.name = name
-        self.player_id = player_id
-
+        
+        self.f_get_player_id = f_get_player_id
         self.f_game_add_points = f_game_add_points
         self.f_game_add_time = f_game_add_time
-        self.f_get_value_chk_sounds = f_get_value_chk_sounds
-        self.f_get_value_chk_music = f_get_value_chk_music
-        self.f_get_value_volume_sounds = f_get_value_volume_sounds
-        self.f_set_game_volumen = f_set_game_volumen
         self.f_game_get_points = f_game_get_points
         self.f_game_get_time = f_game_get_time
         self.f_game_get_vidas_restantes = f_game_get_vidas_restantes
@@ -72,15 +59,11 @@ class FormNivel(Form):
 
         self.flag_k_escape = False
 
-        self.load_widwets()
 
-        '''
-        nivel.player.events(keys, nivel.balas_controller)
-        nivel.draw(screen)
-        nivel.update(delta_ms)
-        nivel.player.draw(screen)
-        '''
-
+    def activate_form(self):
+        if self.form_data["pause"] != True:
+            self.load_widwets()
+        return super().activate_form()
 
     def load_widwets(self):
 
@@ -111,7 +94,7 @@ class FormNivel(Form):
         self.lista_widget.append(self.puntuacion)
         
         
-        player_config = self.get_item_listdicts(self.player_id, self.game_config["Personajes"])
+        player_config = self.get_item_listdicts(self.f_get_player_id(), self.game_config["Personajes"])
         vidas = self.f_game_get_vidas_restantes()
         self.player = Player(
                     master_form= self, 
@@ -121,8 +104,8 @@ class FormNivel(Form):
                     vidas_restantes=vidas,
                     f_add_bullet=self.add_bullet,
                     f_get_my_bullets= self.balas_controller.get_my_bullets_quantity,
-                    f_get_chk_sounds= self.f_get_value_chk_sounds,
-                    f_get_value_volume_sounds= self.f_get_value_volume_sounds)
+                    f_get_chk_sounds= self.get_effects_state,
+                    f_get_value_volume_sounds= self.get_effects_volumen)
 
         self.lista_widget.append(self.player)
 
@@ -168,7 +151,8 @@ class FormNivel(Form):
                     x= teleporter["pos_x"],
                     y= teleporter["pos_y"],
                     config= self.get_item_listdicts(teleporter["id"], self.game_config["Objetivos"]),
-                    f_get_value_volume_sounds = self.f_get_value_volume_sounds
+                    f_get_effects_state=self.get_effects_state,
+                    f_get_value_volume_sounds = self.get_effects_volumen
                 )
                 self.lista_widget.append(new_meta)
                 self.lista_metas.append(new_meta)
@@ -183,7 +167,7 @@ class FormNivel(Form):
                                             config= self.get_item_listdicts("Cactus", self.game_config["Enemigos"]), 
                                             f_add_points= self.f_game_add_points,
                                             f_add_bullet= self.add_bullet,
-                                            f_get_game_volume = self.f_get_value_volume_sounds,
+                                            f_get_game_volume = self.get_effects_volumen,
                                             f_get_coords_player = self.player.get_coords,
                                             lista_plataformas=self.lista_plataformas
                                             )
@@ -198,7 +182,7 @@ class FormNivel(Form):
                                             config= self.get_item_listdicts("Dust", self.game_config["Enemigos"]), 
                                             f_add_points= self.f_game_add_points,
                                             f_get_coords_player = self.player.get_coords,
-                                            f_get_game_volume = self.f_get_value_volume_sounds,
+                                            f_get_game_volume = self.get_effects_volumen,
                                             lista_plataformas=self.lista_plataformas
                                             )
                     self.lista_widget.append(new_enemigo)
@@ -238,7 +222,6 @@ class FormNivel(Form):
 
         self.lista_widget.append(self.cronometro)
         
-        self.f_set_game_volumen()
 
     def leerJSON(self, nombre_archivo) -> None:
         with open(nombre_archivo, "r") as archivo:
@@ -311,14 +294,20 @@ class FormNivel(Form):
     
         if self.player.muerto or self.cronometro.timeout:
             self.form_data["pause"] = False
-            self.cargar_endgame()
+            self.form_data["last_form"] = "JuegoCompleto"
+            self.f_game_add_time(self.cronometro.get_tiempo_restante())
+            self.f_game_set_vidas_restantes(self.player.get_lives())
+            self.form_data["nivel_tiempo_restante"] = self.cronometro.get_tiempo_restante()
+            self.form_data["total_tiempo_restante"] = self.f_game_get_time()
+            self.form_data["vidas_restantes"] = self.f_game_get_vidas_restantes()
+            self.form_data["nivel_puntuacion"] = self.f_game_get_points()
+            self.set_active("NivelCompleto")
 
     def reset_form(self):
         if self.form_data["pause"] != True:
-            player_config = self.get_item_listdicts(self.player_id, self.game_config["Personajes"])
-            if self.active:
-                self.f_game_set_vidas_restantes(player_config["lives"])
-            self.load_widwets()
+            player_config = self.get_item_listdicts(self.f_get_player_id(), self.game_config["Personajes"])
+            #if self.active:
+            #    self.f_game_set_vidas_restantes(player_config["lives"])
         super().reset_form()
 
     def draw(self): 
@@ -399,16 +388,12 @@ class FormNivel(Form):
                 self.cargar_endgame()
 
     
-    def add_bullet(self, owner, x, y, w , h, 
-                    direction,
-                    velocity, 
-                    move_rate_ms, 
-                    frame_rate_ms, 
-                    type, lives, f_get_game_volume):
+    def add_bullet(self, owner, x, y, id,
+                    direction):
             
-            config = self.get_item_listdicts("Piedra", self.game_config["Arrojables"])
+            config = self.get_item_listdicts(id=id, lista=self.game_config["Arrojables"])
 
-            bala = Bullet(self, owner=owner, x=x+25, y=y+25, direction=direction, config=config, f_get_game_volume=f_get_game_volume)
+            bala = Bullet(self, owner=owner, x=x+25, y=y+25, direction=direction, config=config, f_get_effects_state=self.get_effects_state, f_get_effects_volumen=self.get_effects_volumen)
 
             self.balas_controller.add_bullet(bala)
             self.lista_widget.append(bala)
