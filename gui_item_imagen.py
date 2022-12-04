@@ -9,7 +9,7 @@ class Imagen(Widget):
 
         self.render()
 
-    def update(self, delta_ms=None):
+    def update(self, lista_eventos=None, delta_ms=None):
         self.render()
 
     

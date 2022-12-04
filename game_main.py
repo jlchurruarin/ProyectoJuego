@@ -29,12 +29,12 @@ game.add_form(FormMenuPrincipal(game.get_menu_config("MenuPrincipal"),
                                 master_surface=screen, 
                                 f_game_draw_bg=game.draw_bg,
                                 f_game_set_player_id=game.set_player_id, 
-                                active=False))
+                                active=True))
 
 game.add_form(FormMenuAyuda(game.get_menu_config("MenuAyuda"), 
                                 master_surface=screen, 
                                 f_game_draw_bg=game.draw_bg,
-                                active=True))
+                                active=False))
 
 game.add_form(FormMenuHighscore(game.get_menu_config("MenuHighscore"), 
                                 master_surface=screen, 

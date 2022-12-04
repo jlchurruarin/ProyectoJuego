@@ -962,12 +962,20 @@
                 },
                 {
                     "name": "MenuAyuda",
-                    "width": 1000,
+                    "width": 1200,
                     "heigth": 750,
+                    "sidebar_width": 250,
+                    "alto_titulo": 150,
                     "background_image_path": "images/menu/bg.png",
                     "background_sound_path": "sounds/menu/background.mp3",
+                    "label_bg": "images/Assets/Elements/Highscore_item_bg.png", 
+                    "rose": "Nombre: Rose\nPuede disparar 1 proyectil a la vez\nSus disparos son mas rápidos\nComienza con 3 vidas",
+                    "katie": "Nombre: Katie\nPuede disparar 3 proyectiles a la vez\nSus disparos son mas lentos\nComienza con 5 vidas",
+                    "cactus": "Si te acercas demasiado\nte disparará espinas\ncada cierto tiempo",
+                    "dust": "Si te acercas demasiado\nintentará acercarte para dañarte",
+                    "historia": "Rose y Katie fueron secuestradas por un mago tenebroso llamado Arion.\n Arion las envió a un mundo desconocido para que dejarlas encerradas,\n ellas deberán buscar una salida de este mundo para volver a la realidad.",
                     "boton_alto": 50,
-                    "boton_ancho": 50
+                    "boton_ancho": 200
                 }
             ]
         }
