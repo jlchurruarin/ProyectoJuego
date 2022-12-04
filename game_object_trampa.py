@@ -27,7 +27,7 @@ class Trampa(GameObject):
         self.rect.x = x
         self.rect.y = y
 
-        self.rect_daño_jugador = pygame.Rect(self.rect.x, self.rect.y, self.rect.w, self.rect.h)
+        self.rect_daño_jugador = pygame.Rect(self.rect.x + self.rect.w*0.2, self.rect.y, self.rect.w*0.6, self.rect.h)
 
         self.rects = [self.rect_daño_jugador]
 

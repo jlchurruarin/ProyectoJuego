@@ -67,6 +67,7 @@ class FormJuegoCompleto(Form):
 
     def activate_form(self):
         super().activate_form()
+        
         self.f_game_draw_bg()
         self.text_name.texto = ""
         min_top_item = self.f_get_game_min_top_item()
@@ -82,6 +83,7 @@ class FormJuegoCompleto(Form):
             #Mejor puntuación que el ultimo del top
 
         else:
+            self.form_data["last_form"] = "MenuPrincipal"
             self.titulo.set_text("Partida finalizada")
             self.subtitulo.set_text("Resumen de la partida:")
             self.lista_widget = self.lista_widget_fin_partida

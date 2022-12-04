@@ -21,15 +21,22 @@ class CheckButton(Widget):
 
         super().__init__(master_form=master,x=x,y=y,w=w,h=h, color_background=color_background,color_border=color_border,text=text,font=font,font_size=font_size,font_color=font_color, text_offset_x=0, text_offset_y=0)        
 
-        #tamaño imagenes original: 200x70
-        #Calculamos variación de tamaño de la imagen
-        delta_h = 70 / self.h
-        self.image_h = self.h
-        self.image_w = 150 / delta_h
-        #Posicionamos la imagen en la posición de la derecha (super.render lo realiza)
-        self.img_coord_x = self.w - self.image_w
-        self.img_coord_y = 0
-        self.text_offset_x = -self.image_w + 40
+        if text != "":
+            #tamaño imagenes original: 200x70
+            #Calculamos variación de tamaño de la imagen
+            delta_h = 70 / self.h
+            self.image_h = self.h
+            self.image_w = 150 / delta_h
+            #Posicionamos la imagen en la posición de la derecha (super.render lo realiza)
+            self.img_coord_x = self.w - self.image_w
+            self.img_coord_y = 0
+            self.text_offset_x = -self.image_w + 40
+        else:
+            self.image_h = self.h
+            self.image_w = self.w
+            self.img_coord_y = 0
+            self.img_coord_x = 0
+        
 
         self.image_background = pygame.image.load("{0}{1}".format(GAME_PATH, self.image_background_path))
         self.image_background = pygame.transform.scale(self.image_background, (self.image_w, self.image_h))

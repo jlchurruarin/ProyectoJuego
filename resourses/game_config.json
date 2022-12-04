@@ -137,7 +137,7 @@
                     },
                     "speed_walk": 8,
                     "speed_run": 10,
-                    "width": 90,
+                    "width": 60,
                     "heigth": 82, 
                     "gravity": 8,
                     "jump_power": 18,
@@ -959,7 +959,16 @@
                     "background_sound_path": "sounds/menu/background.mp3",
                     "boton_alto": 50,
                     "boton_ancho": 50
-                }            
+                },
+                {
+                    "name": "MenuAyuda",
+                    "width": 1000,
+                    "heigth": 750,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "boton_alto": 50,
+                    "boton_ancho": 50
+                }
             ]
         }
 }

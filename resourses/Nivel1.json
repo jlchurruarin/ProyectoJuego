@@ -62,11 +62,6 @@
                     "id": "Desert-centro",
                     "pos_y": 750,
                     "pos_x": 100
-                },{
-                    "id": "Desert-wCorner",
-                    "pos_y": 150,
-                    "pos_x": 100,
-                    "flip": true
                 },
                 {
                     "id": "Desert-centro",
@@ -398,11 +393,6 @@
                     "id": "Dust",
                     "pos_x": 1700,
                     "pos_y": 650
-                },
-                {
-                    "id": "Dust",
-                    "pos_x": 200,
-                    "pos_y": 150
                 }
             ], 
             "recolectables": [

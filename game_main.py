@@ -8,6 +8,7 @@ from gui_form_menu_configuracion import FormMenuConfiguracion
 from gui_form_menu_highscore import FormMenuHighscore
 from gui_form_nivel_completo import FormNivelCompleto
 from gui_form_juego_completo import FormJuegoCompleto
+from gui_form_ayuda import FormMenuAyuda
 from gui_form_nivel import FormNivel
 
 
@@ -28,6 +29,11 @@ game.add_form(FormMenuPrincipal(game.get_menu_config("MenuPrincipal"),
                                 master_surface=screen, 
                                 f_game_draw_bg=game.draw_bg,
                                 f_game_set_player_id=game.set_player_id, 
+                                active=False))
+
+game.add_form(FormMenuAyuda(game.get_menu_config("MenuAyuda"), 
+                                master_surface=screen, 
+                                f_game_draw_bg=game.draw_bg,
                                 active=True))
 
 game.add_form(FormMenuHighscore(game.get_menu_config("MenuHighscore"), 
@@ -112,3 +118,9 @@ while True:
     pygame.display.flip()
      
     #print(delta_ms)
+
+
+#TODO
+#Al caer no podes volver al menu principal
+#Al perder, el resumen de nivel indica "nivel superador"
+#Modificar hitbox de trampa cactus
