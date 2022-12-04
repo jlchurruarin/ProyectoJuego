@@ -19,7 +19,7 @@ class Platform(GameObject):
         self.render()
 
         self.rect_ground_collition = pygame.Rect(self.slave_rect.x + 10, self.slave_rect.y, self.slave_rect.w - 20, GROUND_RECT_H)
-        self.rect_proyectil_collition = pygame.Rect(self.slave_rect.x + 5, self.slave_rect.y + GROUND_RECT_H, self.slave_rect.w - 10, self.slave_rect.h - GROUND_RECT_H)
+        self.rect_proyectil_collition = pygame.Rect(self.slave_rect.x + 5, self.slave_rect.y + GROUND_RECT_H/4, self.slave_rect.w - 10, self.slave_rect.h - GROUND_RECT_H/4)
         self.rects = [self.rect_ground_collition, self.rect_proyectil_collition]
         
         self.lista_plataformas.append(self)

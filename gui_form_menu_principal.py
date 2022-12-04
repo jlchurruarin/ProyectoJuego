@@ -92,9 +92,9 @@ class FormMenuPrincipal(Form):
         self.set_active(parametro)
             
     def cargar_player_id(self):
-        if self.ninjagirl_value:
+        if self.ninjagirl_value and not self.form_data["pause"]:
             self.f_game_set_player_id("ninjagirl")
-        elif self.cowgirl_value:
+        elif self.cowgirl_value and not self.form_data["pause"]:
             self.f_game_set_player_id("cowgirl")
 
     def continuar_nivel(self, parametro):

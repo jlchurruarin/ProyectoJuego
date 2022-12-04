@@ -94,8 +94,12 @@ class FormMenuConfiguracion(Form):
         super().activate_form()
         
     def update(self, lista_eventos, keys_pressed=None, delta_ms=None):
+        if self.tiempo_evita_doble_click >= 0:
+            self.tiempo_evita_doble_click -= delta_ms
+            lista_eventos = []
+
         for aux_widget in self.lista_widget:
-            aux_widget.update(lista_eventos)
+            aux_widget.update(lista_eventos, delta_ms)
 
     def draw(self): 
         super().draw()

@@ -54,6 +54,8 @@ class Form():
         else:
             self.image_background = None
 
+        self.tiempo_evita_doble_click = 0
+
         self.render()
     
     @property
@@ -110,6 +112,7 @@ class Form():
         self.active = False
 
     def activate_form(self):
+        self.tiempo_evita_doble_click = 1000
         self.active = True
         self.render()
 

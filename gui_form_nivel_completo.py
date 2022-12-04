@@ -52,8 +52,12 @@ class FormNivelCompleto(Form):
         self.vidas_restantes.set_text("Vidas restantes: {0}".format(self.form_data["vidas_restantes"]))
         self.tiempo_restante.set_text("Tiempo restante total: {0}".format(self.form_data["total_tiempo_restante"]))
 
+        if self.tiempo_evita_doble_click >= 0:
+            self.tiempo_evita_doble_click -= delta_ms
+            lista_eventos = []
+
         for aux_widget in self.lista_widget:
-            aux_widget.update(lista_eventos)
+            aux_widget.update(lista_eventos, delta_ms)
 
 
     def draw(self): 
