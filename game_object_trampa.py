@@ -14,7 +14,8 @@ class Trampa(GameObject):
             columnas=animation_dict["columnas"],
             filas=animation_dict["filas"],
             start_frame=animation_dict["start_frame"],
-            end_frame=animation_dict["end_frame"] 
+            end_frame=animation_dict["end_frame"], 
+            quantity=animation_dict["quantity"]
         )
 
         self.animations = [

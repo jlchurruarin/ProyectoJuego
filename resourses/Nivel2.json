@@ -296,99 +296,158 @@
                     "pos_x": 2600
                 },
                 {
-                    "id": "City-Full",
-                    "pos_y": 650,
-                    "pos_x": 2700
-                },
-                {
-                    "id": "City-Full",
-                    "pos_y": 750,
-                    "pos_x": 2700
-                },
-                {
-                    "id": "City-wCorner",
-                    "pos_y": 550,
-                    "pos_x": 2800
-                },
-                {
-                    "id": "City-Limit-izq",
-                    "pos_y": 450,
-                    "pos_x": 2800,
-                    "flip":true
-                },
-                {
-                    "id": "City-Limit-izq",
-                    "pos_y": 350,
-                    "pos_x": 2800,
-                    "flip":true
-                },
-                {
-                    "id": "City-Limit-izq",
-                    "pos_y": 250,
-                    "pos_x": 2800,
-                    "flip":true
-                },
-                {
-                    "id": "City-Izq",
-                    "pos_y": 150,
-                    "pos_x": 2800
-                }, 
-                {
                     "id": "City-Der",
-                    "pos_y": 150,
-                    "pos_x": 2900
+                    "pos_y": 550,
+                    "pos_x": 2700
                 },
                 {
-                    "id": "City-Limit-izq",
-                    "pos_y": 250,
-                    "pos_x": 2900
+                    "id": "City-Full",
+                    "pos_y": 650,
+                    "pos_x": 2700
                 },
                 {
-                    "id": "City-Limit-izq",
-                    "pos_y": 350,
-                    "pos_x": 2900
+                    "id": "City-Full",
+                    "pos_y": 750,
+                    "pos_x": 2700
                 },
                 {
-                    "id": "City-Limit-izq",
-                    "pos_y": 450,
-                    "pos_x": 2900
-                },
-                {
-                    "id": "City-Limit-izq",
+                    "id": "City-H-izq",
                     "pos_y": 550,
                     "pos_x": 2900
                 },
                 {
-                    "id": "City-Limit-izq",
+                    "id": "City-H-der",
+                    "pos_y": 550,
+                    "pos_x": 3000
+                },
+                {
+                    "id": "City-H-izq",
                     "pos_y": 650,
-                    "pos_x": 2900
+                    "pos_x": 3100
                 },
                 {
-                    "id": "City-Limit-izq",
-                    "pos_y": 750,
-                    "pos_x": 2900
-                },
-                {
-                    "id": "City-Full",
-                    "pos_y": 750,
-                    "pos_x": 2800
-                },
-                {
-                    "id": "City-Full",
+                    "id": "City-H-der",
                     "pos_y": 650,
-                    "pos_x": 2800
+                    "pos_x": 3200
+                },
+                {
+                    "id": "City-H-izq",
+                    "pos_y": 550,
+                    "pos_x": 3300
+                },
+                {
+                    "id": "City-H-der",
+                    "pos_y": 550,
+                    "pos_x": 3400
+                },
+                {
+                    "id": "City-H-izq",
+                    "pos_y": 550,
+                    "pos_x": 3600
+                },
+                {
+                    "id": "City-H-der",
+                    "pos_y": 550,
+                    "pos_x": 3700
+                },
+                {
+                    "id": "City-H-izq",
+                    "pos_y": 750,
+                    "pos_x": 4000
+                },
+                {
+                    "id": "City-H-der",
+                    "pos_y": 750,
+                    "pos_x": 4100
+                },
+                {
+                    "id": "City-H-izq",
+                    "pos_y": 650,
+                    "pos_x": 4200
+                },
+                {
+                    "id": "City-H-der",
+                    "pos_y": 650,
+                    "pos_x": 4300
+                },
+                {
+                    "id": "City-H-izq",
+                    "pos_y": 550,
+                    "pos_x": 4400
+                },
+                {
+                    "id": "City-H-der",
+                    "pos_y": 550,
+                    "pos_x": 4500
+                },
+                {
+                    "id": "City-H-izq",
+                    "pos_y": 550,
+                    "pos_x": 4700
+                },
+                {
+                    "id": "City-H-der",
+                    "pos_y": 550,
+                    "pos_x": 4800
+                },
+                {
+                    "id": "City-H-izq",
+                    "pos_y": 550,
+                    "pos_x": 5000
+                },
+                {
+                    "id": "City-H-der",
+                    "pos_y": 550,
+                    "pos_x": 5100
                 }
+
+
             ],
             "trampas": [
                 {
-                    "id": "Cactus",
+                    "id": "Saw",
                     "pos_x": 700,
                     "pos_y": 700
                 },
                 {
-                    "id": "Cactus",
+                    "id": "Saw",
                     "pos_x": 1750,
                     "pos_y": 700
+                },
+                {
+                    "id": "Saw",
+                    "pos_x": 2800,
+                    "pos_y": 500
+                },
+                {
+                    "id": "Saw",
+                    "pos_x": 3000,
+                    "pos_y": 300
+                },
+                {
+                    "id": "Saw",
+                    "pos_x": 3100,
+                    "pos_y": 300
+                },
+                {
+                    "id": "Saw",
+                    "pos_x": 3200,
+                    "pos_y": 300
+                },
+                {
+                    "id": "Saw",
+                    "pos_x": 3200,
+                    "pos_y": 300
+                },
+                {
+                    "id": "Saw",
+                    "pos_x": 4600,
+                    "pos_y": 500
+                },
+                {
+                    "id": "Saw",
+                    "pos_x": 4900,
+                    "pos_y": 500
                 }
             ],
             "enemigos": [
@@ -396,6 +455,21 @@
                     "id": "Cactus",
                     "pos_x": 550,
                     "pos_y": 600
+                },
+                {
+                    "id": "Cactus",
+                    "pos_x": 3300,
+                    "pos_y": 450
+                },
+                {
+                    "id": "Cactus",
+                    "pos_x": 4300,
+                    "pos_y": 550
+                },
+                {
+                    "id": "Cactus",
+                    "pos_x": 4500,
+                    "pos_y": 450
                 },
                 {
                     "id": "Dust",
@@ -428,7 +502,7 @@
             "meta": [
                 {
                     "id": "Teleporter",
-                    "pos_x": 2700,
+                    "pos_x": 5150,
                     "pos_y": 400
                 }
             ]
