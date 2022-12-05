@@ -1,0 +1,982 @@
+{
+    "Config": {
+            "Personajes": [ 
+                {
+                    "id": "ninjagirl",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/ninjagirl/Idle__00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":9,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/ninjagirl/Idle__00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":9,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_r": {
+                            "image": "images/caracters/ninjagirl/Run__00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":9,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_l": {
+                            "image": "images/caracters/ninjagirl/Run__00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":9,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "jump_up_r": {
+                            "image": "images/caracters/ninjagirl/Jump__up_00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":5,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "jump_up_l": {
+                            "image": "images/caracters/ninjagirl/Jump__up_00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":5,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "jump_down_r": {
+                            "image": "images/caracters/ninjagirl/Jump__down_00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":4,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "jump_down_l": {
+                            "image": "images/caracters/ninjagirl/Jump__down_00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":4,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "shoot_r": {
+                            "image": "images/caracters/ninjagirl/Throw__00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":9,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "shoot_l": {
+                            "image": "images/caracters/ninjagirl/Throw__00{0}.png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":9,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "speed_walk": 8,
+                    "speed_run": 10,
+                    "width": 50,
+                    "heigth": 82, 
+                    "gravity": 8,
+                    "jump_power": 18,
+                    "frame_rate_ms": 65,
+                    "move_rate_ms": 15,
+                    "jump_height": 160,
+                    "tiempo_maximo_invulnerable": 1500,
+                    "proyectiles_maximos": 3,
+                    "proyectil_id": "Kunai",
+                    "lives": 5,
+                    "list_sounds": {
+                        "hit":"sounds/player/hit.mp3",
+                        "death": "sounds/player/hit.mp3"
+                    }
+                },
+                {
+                    "id": "cowgirl",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/cowgirl/Idle ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":10,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/cowgirl/Idle ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":10,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_r": {
+                            "image": "images/caracters/cowgirl/Run ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":8,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_l": {
+                            "image": "images/caracters/cowgirl/Run ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":6,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "jump_up_r": {
+                            "image": "images/caracters/cowgirl/Jump up ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":5,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "jump_up_l": {
+                            "image": "images/caracters/cowgirl/Jump up ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":5,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "jump_down_r": {
+                            "image": "images/caracters/cowgirl/Jump down ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":5,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "jump_down_l": {
+                            "image": "images/caracters/cowgirl/Jump down ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":5,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": false,
+                            "inverted_loop": false,
+                            "last_frame_loop": true
+                        },
+                        "shoot_r": {
+                            "image": "images/caracters/cowgirl/Shoot ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":3,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "shoot_l": {
+                            "image": "images/caracters/cowgirl/Shoot ({0}).png",
+                            "columnas": 1,
+                            "filas":1,
+                            "quantity":3,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "speed_walk": 8,
+                    "speed_run": 10,
+                    "width": 90,
+                    "heigth": 82, 
+                    "gravity": 8,
+                    "jump_power": 18,
+                    "frame_rate_ms": 65,
+                    "move_rate_ms": 15,
+                    "jump_height": 160,
+                    "tiempo_maximo_invulnerable": 1500,
+                    "proyectiles_maximos": 1,
+                    "proyectil_id": "Bullet",
+                    "lives": 3,
+                    "list_sounds": {
+                        "hit":"sounds/player/hit.mp3",
+                        "death": "sounds/player/hit.mp3"
+                    }
+                }
+            ],
+            "Plataformas": [
+                {
+                    "id": "Caja",
+                    "type": 1,
+                    "width": 50,
+                    "heigth": 50,
+                    "image": "images/tileset/forest/Objects/Crate.png"
+                },
+                {
+                    "id": "Hielo",
+                    "type": 1,
+                    "width": 50,
+                    "heigth": 50,
+                    "image": "images/tileset/winter/Objects/IceBox.png"
+                }, 
+                {
+                    "id": "Desert-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Centro.png"
+                }, 
+                {
+                    "id": "Desert-Izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Izq.png"
+                }, 
+                {
+                    "id": "Desert-Der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Der.png"
+                },
+                {
+                    "id": "Desert-Full",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Full.png"
+                },
+                {
+                    "id": "Desert-wCorner",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Full-corner.png"
+                },
+                {
+                    "id": "Desert-Limit-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Desert/Limit-izq.png"
+                },
+
+                {
+                    "id": "Desert-H-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Desert/H-izq.png"
+                }, 
+                {
+                    "id": "Desert-H-der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Desert/H-der.png"
+                },
+                {
+                    "id": "Desert-H-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Desert/H-centro.png"
+                },  
+
+                {
+                    "id": "Graveyard-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Centro.png"
+                }, 
+                {
+                    "id": "Graveyard-Izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Izq.png"
+                }, 
+                {
+                    "id": "Graveyard-Der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Der.png"
+                },
+                {
+                    "id": "Graveyard-Full",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Full.png"
+                },
+                {
+                    "id": "Graveyard-wCorner",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Full-corner.png"
+                },
+                {
+                    "id": "Graveyard-Limit-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/Graveyard/Limit-izq.png"
+                }, 
+
+                {
+                    "id": "Graveyard-H-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Graveyard/H-izq.png"
+                }, 
+                {
+                    "id": "Graveyard-H-der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Graveyard/H-der.png"
+                },
+                {
+                    "id": "Graveyard-H-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/Graveyard/H-centro.png"
+                },  
+
+                {
+                    "id": "City-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Centro.png"
+                }, 
+                {
+                    "id": "City-Izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Izq.png"
+                }, 
+                {
+                    "id": "City-Der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Der.png"
+                },
+                {
+                    "id": "City-Full",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Full.png"
+                },
+                {
+                    "id": "City-wCorner",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Full-corner.png"
+                },
+                {
+                    "id": "City-Limit-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 100,
+                    "image": "images/Assets/Platforms/City/Limit-izq.png"
+                },
+
+
+                {
+                    "id": "City-H-izq",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/City/H-izq.png"
+                }, 
+                {
+                    "id": "City-H-der",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/City/H-der.png"
+                },
+                {
+                    "id": "City-H-centro",
+                    "type": 1,
+                    "width": 100,
+                    "heigth": 50,
+                    "image": "images/Assets/Platforms/City/H-centro.png"
+                }
+            ],
+            "Trampas": [
+                {
+                    "id": "Cactus",
+                    "width": 90,
+                    "heigth": 50, 
+                    "type": "Static",
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 0,
+                    "animations_dict": {
+                        "idle": {
+                            "image": "images/caracters/trampas/Cactus_trampa.png",
+                            "columnas":2,
+                            "filas":1,
+                            "start_frame":0,
+                            "end_frame":2
+                        }
+                    }
+                },
+                {
+                    "id": "Saw",
+                    "width": 100,
+                    "heigth": 100, 
+                    "type": "dynamic",
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 20,
+                    "speed_walk": 4,
+                    "move_range": [100,0],
+                    "animations": {
+                        "idle": {
+                            "image": "images/tileset/space_ship/Objects/Saw IDLE{1}.png",
+                            "start_frame":0,
+                            "end_frame":4
+                        }
+                    }
+                }
+            ],
+            "Enemigos": [
+                {
+                    "id": "Cactus",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/enemies/cactus.png",
+                            "columnas":6,
+                            "filas":7,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame": 1, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/enemies/cactus.png",
+                            "columnas":6,
+                            "filas":7,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 1, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "width": 98,
+                    "heigth": 100,
+                    "speed_walk": 4,
+                    "speed_run" : 4,
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "lives": 1,
+                    "trigger_range": 400,
+                    "proyectil_id": "Espina",
+                    "dead_points": 100,
+                    "respawn_time": 5000
+                },
+                {
+                    "id": "Dust",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/enemies/dust_idle.png",
+                            "columnas": 9,
+                            "filas": 20,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":1,
+                            "end_frame": 172, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/enemies/dust_idle.png",
+                            "columnas": 9,
+                            "filas": 20,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":1,
+                            "end_frame": 172, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_r": {
+                            "image": "images/caracters/enemies/dust_walk.png",
+                            "columnas": 8,
+                            "filas": 1,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":1,
+                            "end_frame": 8, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "walk_l": {
+                            "image": "images/caracters/enemies/dust_walk.png",
+                            "columnas": 8,
+                            "filas": 1,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":1,
+                            "end_frame": 8, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "width": 104,
+                    "heigth": 59,
+                    "speed_walk": 2,
+                    "speed_run" : 3,
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "trigger_range": 250,
+                    "walk_range": [150,0],
+                    "lives": 1,
+                    "dead_points": 100,
+                    "respawn_time": 10000
+                }
+            ], 
+            "Arrojables": [
+                {
+                    "id": "Piedra",
+                    "width": 25,
+                    "heigth": 25, 
+                    "type": "Static",
+                    "velocity": 8, 
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 0,
+                    "lives": 1,
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/Assets/Proyectiles/rock.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/Assets/Proyectiles/rock.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                },
+                {
+                    "id": "Bullet",
+                    "width": 25,
+                    "heigth": 25, 
+                    "type": "Static",
+                    "velocity": 16, 
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 0,
+                    "lives": 1,
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/Assets/Proyectiles/bullet.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/Assets/Proyectiles/bullet.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                },
+                {
+                    "id": "Espina",
+                    "width": 25,
+                    "heigth": 25, 
+                    "type": "Static",
+                    "velocity": 12, 
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 0,
+                    "lives": 1,
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/Assets/Proyectiles/espinas.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/Assets/Proyectiles/espinas.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                },
+                {
+                    "id": "Kunai",
+                    "width": 50,
+                    "heigth": 15, 
+                    "type": "Static",
+                    "velocity": 10, 
+                    "frame_rate_ms": 300,
+                    "move_rate_ms": 0,
+                    "lives": 1,
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/Assets/Proyectiles/kunai.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/Assets/Proyectiles/kunai.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":0,
+                            "flip": true,
+                            "start_frame":0,
+                            "end_frame":2, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                }
+            ],
+            "Recolectables": [
+                {
+                    "id": "Star",
+                    "width": 50,
+                    "heigth": 50,
+                    "speed_walk": 4,
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 10,
+                    "animations_dict": {
+                        "idle": {
+                            "image": "images/Assets/Recolectables/star.png",
+                            "columnas":15,
+                            "filas":2,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":29, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                }
+            ],
+            "Objetivos": [
+                {
+                    "id": "Teleporter",
+                    "width": 70,
+                    "heigth": 150, 
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 20,
+                    "animations_dict": {
+                        "idle": {
+                            "id": "idle",
+                            "image": "images/Assets/Elements/teleporter.png",
+                            "columnas":5,
+                            "filas":3,
+                            "quantity":0,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame":15, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    }
+                }
+            ],
+            "UI": [
+                {
+                    "id":"player_lives",
+                    "image":"images/gui/heart.png",
+                    "pos_x": 75,
+                    "pos_y": 75,
+                    "width": 20,
+                    "heigth": 20
+
+                },
+                {
+                    "id":"cronometro",
+                    "image":"images/gui/Tab01.png",
+                    "pos_x": 1290,
+                    "pos_y": 750,
+                    "width": 200,
+                    "heigth": 50,
+                    "text": "",
+                    "font": "Verdana",
+                    "font_size": 30,
+                    "font_color": [0,0,0],
+                    "text_offset_x": 0,
+                    "text_offset_y": 2
+                    
+                },
+                {
+                    "id": "puntuacion",
+                    "image": "images/gui/puntuacion.png",
+                    "pos_x": 1125,
+                    "pos_y": 75,
+                    "width": 300,
+                    "heigth": 50,
+                    "text": "000000",
+                    "font": "Verdana",
+                    "font_size": 30,
+                    "font_color": [240,240,240],
+                    "text_offset_x": 0,
+                    "text_offset_y": -5
+                }
+            ],
+            "Menus": [
+                {
+                    "name": "MenuPrincipal",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "botones_ancho": 260,
+                    "botones_alto": 50
+                },
+                {
+                    "name": "MenuConfiguracion",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "botones_ancho": 260,
+                    "botones_alto": 50,
+                    "slider_ancho": 300,
+                    "slider_alto": 50
+                },
+                {
+                    "name": "MenuHighscore",
+                    "width": 800,
+                    "heigth": 700,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "label_bg": "images/Assets/Elements/Highscore_item_bg.png", 
+                    "label_ancho": 150,
+                    "label_alto": 50,
+                    "boton_alto": 50,
+                    "boton_ancho": 50
+                },
+                {
+                    "name": "NivelCompleto",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "boton_alto": 50,
+                    "boton_ancho": 50
+                },
+                {
+                    "name": "JuegoCompleto",
+                    "width": 500,
+                    "heigth": 600,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "boton_alto": 50,
+                    "boton_ancho": 50
+                },
+                {
+                    "name": "MenuAyuda",
+                    "width": 1200,
+                    "heigth": 750,
+                    "sidebar_width": 250,
+                    "alto_titulo": 150,
+                    "background_image_path": "images/menu/bg.png",
+                    "background_sound_path": "sounds/menu/background.mp3",
+                    "label_bg": "images/Assets/Elements/Highscore_item_bg.png", 
+                    "rose": "Nombre: Rose\nPuede disparar 1 proyectil a la vez\nSus disparos son mas rápidos\nComienza con 3 vidas",
+                    "katie": "Nombre: Katie\nPuede disparar 3 proyectiles a la vez\nSus disparos son mas lentos\nComienza con 5 vidas",
+                    "cactus": "Si te acercas demasiado\nte disparará espinas\ncada cierto tiempo",
+                    "dust": "Si te acercas demasiado\nintentará acercarte para dañarte",
+                    "historia": "Rose y Katie fueron secuestradas por un mago tenebroso llamado Arion.\n Arion las envió a un mundo desconocido para que dejarlas encerradas,\n ellas deberán buscar una salida de este mundo para volver a la realidad.",
+                    "boton_alto": 50,
+                    "boton_ancho": 200
+                }
+            ]
+        }
+}
