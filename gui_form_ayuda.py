@@ -44,9 +44,9 @@ class FormMenuAyuda(Form):
         self.titulo = Label(master_form=self, x=0, y=30, w=self.w, h=ALTO_LABEL, text="Menu de ayuda", font= "Arial", font_size=40, font_color=C_TEXT)
         self.subtitulo = Label(master_form=self, x=0, y=100, w=self.w, h=ALTO_LABEL, text="", font= "Arial", font_size=24, font_color=C_TEXT)
 
-        self.btn_historia = Button(master=self,x=50,y=self.alto_titulo+20,w=self.sidebar_width,h=self.boton_alto,color_background=None,color_border=None,image_background="images/gui/set_gui_01/Comic_Border/Buttons/Button_M_02.png",on_click=self.mostrar_historia,text="Historia",font="Verdana",font_size=30,font_color=C_WHITE)
-        self.btn_personajes = Button(master=self,x=50,y=self.alto_titulo+40+self.boton_alto,w=self.sidebar_width,h=self.boton_alto,color_background=None,color_border=None,image_background="images/gui/set_gui_01/Comic_Border/Buttons/Button_M_02.png",on_click=self.mostrar_personajes,text="Personajes",font="Verdana",font_size=30,font_color=C_WHITE)
-        self.btn_enemigos = Button(master=self,x=50,y=self.alto_titulo+60+self.boton_alto*2,w=self.sidebar_width,h=self.boton_alto,color_background=None,color_border=None,image_background="images/gui/set_gui_01/Comic_Border/Buttons/Button_M_02.png",on_click=self.mostrar_enemigos,text="Enemigos",font="Verdana",font_size=30,font_color=C_WHITE)
+        self.btn_historia = Button(master=self,x=50,y=self.alto_titulo+20,w=self.sidebar_width,h=self.boton_alto,color_background=None,color_border=None,image_background="images/menu/button/Button_M_02.png",on_click=self.mostrar_historia,text="Historia",font="Verdana",font_size=30,font_color=C_WHITE)
+        self.btn_personajes = Button(master=self,x=50,y=self.alto_titulo+40+self.boton_alto,w=self.sidebar_width,h=self.boton_alto,color_background=None,color_border=None,image_background="images/menu/button/Button_M_02.png",on_click=self.mostrar_personajes,text="Personajes",font="Verdana",font_size=30,font_color=C_WHITE)
+        self.btn_enemigos = Button(master=self,x=50,y=self.alto_titulo+60+self.boton_alto*2,w=self.sidebar_width,h=self.boton_alto,color_background=None,color_border=None,image_background="images/menu/button/Button_M_02.png",on_click=self.mostrar_enemigos,text="Enemigos",font="Verdana",font_size=30,font_color=C_WHITE)
         
         #self.descripción = Label(master_form=self, x=self.width/2-self.label_ancho*2, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text="{}".format(pos+1), font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
 

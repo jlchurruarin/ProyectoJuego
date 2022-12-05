@@ -137,7 +137,7 @@
                     },
                     "speed_walk": 8,
                     "speed_run": 10,
-                    "width": 60,
+                    "width": 50,
                     "heigth": 82, 
                     "gravity": 8,
                     "jump_power": 18,
@@ -527,7 +527,7 @@
                     "move_rate_ms": 0,
                     "animations_dict": {
                         "idle": {
-                            "image": "images/tileset/desert/Objects/Cactus_trampa2.png",
+                            "image": "images/caracters/trampas/Cactus_trampa.png",
                             "columnas":2,
                             "filas":1,
                             "start_frame":0,
@@ -558,7 +558,7 @@
                     "id": "Cactus",
                     "animations_dict": {
                         "idle_r": {
-                            "image": "images/caracters/enemies/cactus/npc_cactus__x1_idle_png_1354833520.png",
+                            "image": "images/caracters/enemies/cactus.png",
                             "columnas":6,
                             "filas":7,
                             "quantity":0,
@@ -571,7 +571,7 @@
                             "last_frame_loop": false
                         },
                         "idle_l": {
-                            "image": "images/caracters/enemies/cactus/npc_cactus__x1_idle_png_1354833520.png",
+                            "image": "images/caracters/enemies/cactus.png",
                             "columnas":6,
                             "filas":7,
                             "quantity":0,
@@ -600,7 +600,7 @@
                     "id": "Dust",
                     "animations_dict": {
                         "idle_r": {
-                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
+                            "image": "images/caracters/enemies/dust_idle.png",
                             "columnas": 9,
                             "filas": 20,
                             "quantity":0,
@@ -613,7 +613,7 @@
                             "last_frame_loop": false
                         },
                         "idle_l": {
-                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
+                            "image": "images/caracters/enemies/dust_idle.png",
                             "columnas": 9,
                             "filas": 20,
                             "quantity":0,
@@ -626,26 +626,26 @@
                             "last_frame_loop": false
                         },
                         "walk_r": {
-                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
-                            "columnas": 9,
-                            "filas": 20,
+                            "image": "images/caracters/enemies/dust_walk.png",
+                            "columnas": 8,
+                            "filas": 1,
                             "quantity":0,
                             "flip": true,
                             "start_frame":1,
-                            "end_frame": 172, 
+                            "end_frame": 8, 
                             "step": 1,
                             "normal_loop": true,
                             "inverted_loop": false,
                             "last_frame_loop": false
                         },
                         "walk_l": {
-                            "image": "images/caracters/enemies/newxp_dustbunny/npc_newxp_dustbunny__x1_idle_stand_png_1354840034.png",
-                            "columnas": 9,
-                            "filas": 20,
+                            "image": "images/caracters/enemies/dust_walk.png",
+                            "columnas": 8,
+                            "filas": 1,
                             "quantity":0,
                             "flip": false,
                             "start_frame":1,
-                            "end_frame": 172, 
+                            "end_frame": 8, 
                             "step": 1,
                             "normal_loop": true,
                             "inverted_loop": false,
@@ -829,7 +829,7 @@
                     "move_rate_ms": 10,
                     "animations_dict": {
                         "idle": {
-                            "image": "images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png",
+                            "image": "images/Assets/Recolectables/star.png",
                             "columnas":15,
                             "filas":2,
                             "quantity":0,
@@ -854,7 +854,7 @@
                     "animations_dict": {
                         "idle": {
                             "id": "idle",
-                            "image": "images/machines/teleporter_visible/teleporter_visible__x1_portal_png_1354836401.png",
+                            "image": "images/Assets/Elements/teleporter.png",
                             "columnas":5,
                             "filas":3,
                             "quantity":0,
@@ -872,7 +872,7 @@
             "UI": [
                 {
                     "id":"player_lives",
-                    "image":"images/gui/set_gui_01/Comic/Elements/heart.png",
+                    "image":"images/gui/heart.png",
                     "pos_x": 75,
                     "pos_y": 75,
                     "width": 20,
@@ -881,7 +881,7 @@
                 },
                 {
                     "id":"cronometro",
-                    "image":"images/gui/set_gui_01/Pixel_Border/Elements/Tab01.png",
+                    "image":"images/gui/Tab01.png",
                     "pos_x": 1290,
                     "pos_y": 750,
                     "width": 200,
@@ -896,7 +896,7 @@
                 },
                 {
                     "id": "puntuacion",
-                    "image": "images/gui/set_gui_01/Paper/Banner/Banner05.png",
+                    "image": "images/gui/puntuacion.png",
                     "pos_x": 1125,
                     "pos_y": 75,
                     "width": 300,

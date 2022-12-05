@@ -59,7 +59,7 @@ class Cactus(Enemy):
 
         self.rect_ground_collition = pygame.Rect(self.rect.x, self.rect.y, self.rect.w, self.rect.h)
         self.rect_muerte_aplastado = pygame.Rect(self.rect.x + self.rect.w / 6, self.rect.y + self.rect.h / 2.5, self.rect.w / 4, GROUND_RECT_H)
-        self.rect_muerte_proyectil = pygame.Rect(self.rect.x + self.rect.w / 6, self.rect.y + self.rect.h / 2.5, self.rect.w / 3.7, self.rect.h / 2)
+        self.rect_muerte_proyectil = pygame.Rect(self.rect.x + self.rect.w / 6, self.rect.y, self.rect.w / 3.7, self.rect.h)
         self.rect_daño_jugador = pygame.Rect(self.rect.x + self.rect.w / 6, self.rect.y + self.rect.h / 2.5, self.rect.w / 3.7, self.rect.h / 2)
 
         self.rects = [self.rect_muerte_aplastado, self.rect_muerte_proyectil, self.rect_daño_jugador, self.rect_ground_collition]

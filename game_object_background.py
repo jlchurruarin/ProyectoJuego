@@ -3,8 +3,6 @@ import pygame
 from game_object import GameObject
 from constantes import *
 
-#"/images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png"
-
 class Background(GameObject):
 
 

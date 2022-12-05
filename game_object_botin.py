@@ -1,7 +1,6 @@
 
 from game_object import GameObject
 from animacion import Animacion
-#"/images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png"
 
 class Botin(GameObject):
 

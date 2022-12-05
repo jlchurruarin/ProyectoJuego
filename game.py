@@ -107,7 +107,7 @@ class Game():
     def load_ranking(self):
         try:
             ranking = []
-            conexion=sqlite3.connect("prueba.db")
+            conexion=sqlite3.connect("ranking.db")
             sentencia = "SELECT * FROM ranking ORDER BY puntaje DESC, tiempo_restante DESC LIMIT 10"
             cursor=conexion.execute(sentencia)
             for fila in cursor:
@@ -144,7 +144,7 @@ class Game():
 
     def insert_ranking(self, nombre, puntaje, tiempo_restante):
         try:
-            conexion=sqlite3.connect("prueba.db")
+            conexion=sqlite3.connect("ranking.db")
             conexion.execute("INSERT INTO ranking(nombre, puntaje, tiempo_restante) values (?,?,?)", (nombre, puntaje, tiempo_restante))
             conexion.commit()
         except:

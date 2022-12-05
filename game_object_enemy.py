@@ -3,8 +3,6 @@ from constantes import *
 from game_object import GameObject
 from game_object_plataforma import Platform
 
-#"/images/assets/toy_star_1/toy_star_1__x1_glow_png_1354840045.png"
-
 class Enemy(GameObject):
 
     lista_enemigos = []
