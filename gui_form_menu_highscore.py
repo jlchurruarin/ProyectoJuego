@@ -39,7 +39,7 @@ class FormMenuHighscore(Form):
         self.titulo_tiempo = Label(master_form=self, x=self.width/2+self.label_ancho, y=50, w=self.label_ancho, h=self.label_alto, text="Tiempo restante", 
                                         font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
 
-        self.btn_ok = Button(master=self,x=self.width/2-self.boton_ancho/2,y=self.heigth-45-self.boton_alto,w=self.boton_ancho,h=self.boton_alto,
+        self.btn_ok = Button(master=self,x=self.width/2-self.boton_ancho/2,y=self.heigth-100-self.boton_alto,w=self.boton_ancho,h=self.boton_alto,
                                     color_background=None,color_border=None, image_background="images/menu/icons/ok.png",on_click=self.volver_atras)
 
         self.lista_widget = []
