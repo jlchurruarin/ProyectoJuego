@@ -52,7 +52,7 @@ class FormJuegoCompleto(Form):
         self.mensaje = Label(master_form=self, x=ANCHO_FORM/2-ANCHO_LABEL/2, y=225, w=ANCHO_LABEL, h=25, text="Ingresa tu nombre y presiona el botón verde", font= "Arial", font_size=18, font_color=C_TEXT)
         self.mensaje2 = Label(master_form=self, x=ANCHO_FORM/2-ANCHO_LABEL/2, y=250, w=ANCHO_LABEL, h=25, text="para registrarte en el hall de la fama", font= "Arial", font_size=18, font_color=C_TEXT)
         self.error_msg = Label(master_form=self, x=ANCHO_FORM/2-ANCHO_LABEL/2, y=400, w=ANCHO_LABEL, h=25, text="Debes ingresar un nombre", color_background=(99,99,99),  font= "Arial", font_size=18, font_color=C_RED)
-        self.btn_cargar_record = Button(master=self,x=ANCHO_FORM/2-ANCHO_BOTON/2,y=ALTO_FORM-20-ALTO_BOTON,w=69,h=68,color_background=None,color_border=None,image_background="images/menu/icons/ok.png",on_click=self.cargar_record)
+        self.btn_cargar_record = Button(master=self,x=ANCHO_FORM/2-ANCHO_BOTON/2,y=ALTO_FORM-45-ALTO_BOTON,w=69,h=68,color_background=None,color_border=None,image_background="images/menu/icons/ok.png",on_click=self.cargar_record)
 
         self.btn_continuar = Button(master=self,x=ANCHO_FORM/2-ANCHO_BOTON/2,y=ALTO_FORM-100-ALTO_BOTON,w=69,h=68,color_background=None,color_border=None,image_background="images/menu/icons/ok.png",on_click=self.cargar_siguiente_nivel)
         self.puntaje = Label(master_form=self, x=ANCHO_FORM/2-ANCHO_LABEL/2, y=225, w=ANCHO_LABEL, h=ALTO_LABEL, color_background=C_WHITE, text="Puntaje: ", font= "Arial", font_size=25, font_color=C_BLACK)
