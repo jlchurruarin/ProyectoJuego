@@ -524,14 +524,16 @@
                     "heigth": 50, 
                     "type": "Static",
                     "frame_rate_ms": 300,
-                    "move_rate_ms": 0,
+                    "move_rate_ms": 1000,
                     "animations_dict": {
                         "idle": {
                             "image": "images/caracters/trampas/Cactus_trampa.png",
                             "columnas":2,
                             "filas":1,
+                            "quantity":0,
                             "start_frame":0,
                             "end_frame":2
+
                         }
                     }
                 },
@@ -539,16 +541,18 @@
                     "id": "Saw",
                     "width": 100,
                     "heigth": 100, 
-                    "type": "dynamic",
-                    "frame_rate_ms": 300,
-                    "move_rate_ms": 20,
+                    "type": "Static",
+                    "frame_rate_ms": 50,
+                    "move_rate_ms": 1000,
                     "speed_walk": 4,
-                    "move_range": [100,0],
-                    "animations": {
+                    "animations_dict": {
                         "idle": {
-                            "image": "images/tileset/space_ship/Objects/Saw IDLE{1}.png",
+                            "image": "images/caracters/trampas/Saw IDLE_{0}.png",
+                            "columnas":1,
+                            "filas":1,
+                            "quantity":3,
                             "start_frame":0,
-                            "end_frame":4
+                            "end_frame":0
                         }
                     }
                 }
@@ -655,14 +659,56 @@
                     "width": 104,
                     "heigth": 59,
                     "speed_walk": 2,
-                    "speed_run" : 3,
+                    "speed_run" : 6,
                     "frame_rate_ms": 30,
                     "move_rate_ms": 10,
                     "trigger_range": 250,
                     "walk_range": [150,0],
                     "lives": 1,
                     "dead_points": 100,
-                    "respawn_time": 10000
+                    "respawn_time": 7000
+                },
+                {
+                    "id": "Fireball",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/enemies/fireball/fireball_idle_{0}.png",
+                            "columnas": 1,
+                            "filas": 1,
+                            "quantity":2,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/enemies/fireball/fireball_idle_{0}.png",
+                            "columnas": 1,
+                            "filas": 1,
+                            "quantity":2,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "width": 10,
+                    "heigth": 10,
+                    "speed_walk": 12,
+                    "speed_run": 2,
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "trigger_range": 250,
+                    "lives": 1,
+                    "dead_points": 0,
+                    "respawn_time": 10000,
+                    "max_y_movement": 600
                 }
             ], 
             "Arrojables": [

@@ -10,6 +10,7 @@ from game_object_proyectil import Bullet
 from game_object_botin import Botin
 from game_object_enemy_cactus import Cactus
 from game_object_enemy_dust import Dust
+from game_object_enemy_fireball import Fireball
 from controller_balas import BalasController
 from controller_enemy import EnemyController
 from gui_form import Form
@@ -188,6 +189,20 @@ class FormNivel(Form):
                     self.lista_widget.append(new_enemigo)
                     self.lista_enemigos.append(new_enemigo)
                     self.lista_game_objects.append(new_enemigo)
+                
+                elif enemigo["id"] == "Fireball":
+                    new_enemigo = Fireball(master_form=self,
+                                            x= enemigo["pos_x"], 
+                                            y= enemigo["pos_y"],
+                                            config= self.get_item_listdicts("Fireball", self.game_config["Enemigos"]), 
+                                            f_add_points= self.f_game_add_points,
+                                            f_get_coords_player = self.player.get_coords,
+                                            f_get_game_volume = self.get_effects_volumen,
+                                            lista_plataformas=self.lista_plataformas
+                                            )
+                    self.lista_widget.append(new_enemigo)
+                    self.lista_enemigos.append(new_enemigo)
+                    self.lista_game_objects.append(new_enemigo)
 
         if "recolectables" in self.level_config:
             for botin in self.level_config["recolectables"]:
@@ -332,11 +347,12 @@ class FormNivel(Form):
                     self.add_x_to_game_objects(8)
 
             for enemy in self.lista_enemigos:
-                if plataforma.rect_proyectil_collition.colliderect(enemy.rect_ground_collition):
-                    if enemy.rect_ground_collition.x > plataforma.rect_proyectil_collition.x:
-                        enemy.add_x(8)
-                    else:
-                        enemy.add_x(-8)
+                if hasattr(enemy, "rect_proyectil_collition"):
+                    if plataforma.rect_proyectil_collition.colliderect(enemy.rect_ground_collition):
+                        if enemy.rect_ground_collition.x > plataforma.rect_proyectil_collition.x:
+                            enemy.add_x(8)
+                        else:
+                            enemy.add_x(-8)
 
 
         for botin in self.lista_botines:
@@ -363,9 +379,10 @@ class FormNivel(Form):
 
             for enemy in self.lista_enemigos:
                 if bala.owner != enemy and not enemy.muerto:
-                    if bala.rect_kill_collition.colliderect(enemy.rect_muerte_proyectil):
-                        enemy.hit()
-                        bala.hit()
+                    if hasattr(enemy, "rect_muerte_proyectil"):
+                        if bala.rect_kill_collition.colliderect(enemy.rect_muerte_proyectil):
+                            enemy.hit()
+                            bala.hit()
                 else:
                     if bala.owner != self.player:
                         if bala.rect_kill_collition.colliderect(self.player.rect_death_collition):
