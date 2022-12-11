@@ -666,7 +666,49 @@
                     "walk_range": [150,0],
                     "lives": 1,
                     "dead_points": 100,
-                    "respawn_time": 10000
+                    "respawn_time": 7000
+                },
+                {
+                    "id": "Fireball",
+                    "animations_dict": {
+                        "idle_r": {
+                            "image": "images/caracters/enemies/fireball/fireball_idle_{0}.png",
+                            "columnas": 1,
+                            "filas": 1,
+                            "quantity":2,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        },
+                        "idle_l": {
+                            "image": "images/caracters/enemies/fireball/fireball_idle_{0}.png",
+                            "columnas": 1,
+                            "filas": 1,
+                            "quantity":2,
+                            "flip": false,
+                            "start_frame":0,
+                            "end_frame": 0, 
+                            "step": 1,
+                            "normal_loop": true,
+                            "inverted_loop": false,
+                            "last_frame_loop": false
+                        }
+                    },
+                    "width": 10,
+                    "heigth": 10,
+                    "speed_walk": 12,
+                    "speed_run": 2,
+                    "frame_rate_ms": 30,
+                    "move_rate_ms": 10,
+                    "trigger_range": 250,
+                    "lives": 1,
+                    "dead_points": 0,
+                    "respawn_time": 10000,
+                    "max_y_movement": 600
                 }
             ], 
             "Arrojables": [

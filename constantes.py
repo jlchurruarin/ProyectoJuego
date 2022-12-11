@@ -6,7 +6,7 @@ DIRECTION_L = 0
 DIRECTION_R = 1
 
 DEBUG = False
-LEVEL_DEBUG = True
+LEVEL_DEBUG = False
 
 RED = (255,0,0)
 GREEN = (0,255,0)

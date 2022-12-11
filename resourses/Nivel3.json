@@ -365,6 +365,11 @@
             ],
             "enemigos": [
                 {
+                    "id": "Fireball",
+                    "pos_x": 200,
+                    "pos_y": 800
+                },
+                {
                     "id": "Cactus",
                     "pos_x": 550,
                     "pos_y": 400
