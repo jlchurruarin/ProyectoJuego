@@ -39,8 +39,8 @@ class Fireball(Enemy):
 
             self.animations.append(getattr(self, animation))
         
-        self._animation = self.idle_l
-        self._direction = DIRECTION_R
+        self._animation = self.walk_up
+        self._direction = DIRECTION_U
         self.image_background = self.animation.next_frame()
         self.rect = self.image_background.get_rect()
         self.rect.x = x
@@ -56,6 +56,9 @@ class Fireball(Enemy):
         self.timer_jump_min = 1000
         self.timer_jump_max = 3000
         self.f_get_game_volume = f_get_game_volume
+        self.tiempo_transcurrido_hidden = 0
+        self.tiempo_hidden = random.randint(500, 6000)
+        self.hidden = True
 
         self.muerto = False
 
@@ -73,26 +76,42 @@ class Fireball(Enemy):
     def direction(self, new_direction):
         if self._direction != new_direction:
             self._direction = new_direction
-            if self.animation == self.idle_r:
-                self.animation = self.idle_l
-            elif self.animation == self.idle_l:
-                self.animation = self.idle_r
+            if self.animation == self.walk_down:
+                self.animation = self.walk_up
+            elif self.animation == self.walk_up:
+                self.animation = self.walk_down
 
         #print(str(self.rect_ground_collition.x) + " - " + str(self.rect_ground_collition.y))
 
     def update(self, delta_ms=None):
         if self.rect_daño_jugador.y < self.inicial_rect_y - self.max_y_movement:
+            if self.move_y != self.speed_walk:
+                self.direction = DIRECTION_D
+
             self.move_y = self.speed_walk
+
         elif self.rect_daño_jugador.y >= self.inicial_rect_y:
+            if self.move_y != -self.speed_walk:
+                self.tiempo_hidden = random.randint(500, 6000)
+                self.hidden = True
+                self.direction = DIRECTION_U
+
             self.move_y = -self.speed_walk
         return super().update(delta_ms)
 
     def do_movement(self, delta_ms):
         
         self.tiempo_transcurrido_move += delta_ms
+        self.tiempo_transcurrido_hidden += delta_ms
         if(self.tiempo_transcurrido_move >= self.move_rate_ms):
+            self.tiempo_transcurrido_move = 0
+            if self.tiempo_transcurrido_hidden >= self.tiempo_hidden:
+                self.tiempo_transcurrido_hidden = 0
+                self.hidden = False
 
-            self.add_y_move(self.move_y)
+            if self.hidden == False:
+                self.add_y_move(self.move_y)
+
 
         return super().do_movement(delta_ms)
 
@@ -108,4 +127,7 @@ class Fireball(Enemy):
         return True
 
     def hit(self):
+        pass
+
+    def trigger(self):
         pass

@@ -347,12 +347,102 @@
                 {
                     "id": "Graveyard-Izq",
                     "pos_y": 750,
-                    "pos_x": 2400
+                    "pos_x": 4700
                 },
                 {
                     "id": "Graveyard-Der",
                     "pos_y": 750,
-                    "pos_x": 2500
+                    "pos_x": 4800
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 500,
+                    "pos_x": 2300
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 500,
+                    "pos_x": 2400
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 400,
+                    "pos_x": 2600
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 400,
+                    "pos_x": 2700
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 400,
+                    "pos_x": 2900
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 400,
+                    "pos_x": 3000
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 400,
+                    "pos_x": 3100
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 400,
+                    "pos_x": 3200
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 300,
+                    "pos_x": 3300
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 300,
+                    "pos_x": 3400
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 600,
+                    "pos_x": 3500
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 600,
+                    "pos_x": 3600
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 600,
+                    "pos_x": 3800
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 600,
+                    "pos_x": 3900
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 500,
+                    "pos_x": 4100
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 500,
+                    "pos_x": 4200
+                },
+                {
+                    "id": "Graveyard-H-izq",
+                    "pos_y": 400,
+                    "pos_x": 4400
+                },
+                {
+                    "id": "Graveyard-H-der",
+                    "pos_y": 400,
+                    "pos_x": 4500
                 }
 
             ],
@@ -361,12 +451,36 @@
                     "id": "Cactus",
                     "pos_x": 1750,
                     "pos_y": 700
+                },{
+                    "id": "Cactus",
+                    "pos_x": 2950,
+                    "pos_y": 350
                 }
             ],
             "enemigos": [
                 {
                     "id": "Fireball",
-                    "pos_x": 200,
+                    "pos_x": 2250,
+                    "pos_y": 800
+                },
+                {
+                    "id": "Fireball",
+                    "pos_x": 2550,
+                    "pos_y": 800
+                },
+                {
+                    "id": "Fireball",
+                    "pos_x": 2850,
+                    "pos_y": 800
+                },
+                {
+                    "id": "Fireball",
+                    "pos_x": 3750,
+                    "pos_y": 800
+                },
+                {
+                    "id": "Fireball",
+                    "pos_x": 4350,
                     "pos_y": 800
                 },
                 {
@@ -405,7 +519,7 @@
             "meta": [
                 {
                     "id": "Teleporter",
-                    "pos_x": 2500,
+                    "pos_x": 4750,
                     "pos_y": 600
                 }
             ]

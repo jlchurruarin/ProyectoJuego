@@ -671,8 +671,8 @@
                 {
                     "id": "Fireball",
                     "animations_dict": {
-                        "idle_r": {
-                            "image": "images/caracters/enemies/fireball/fireball_idle_{0}.png",
+                        "walk_up": {
+                            "image": "images/caracters/enemies/fireball/fireball_walk_up_{0}.png",
                             "columnas": 1,
                             "filas": 1,
                             "quantity":2,
@@ -684,8 +684,8 @@
                             "inverted_loop": false,
                             "last_frame_loop": false
                         },
-                        "idle_l": {
-                            "image": "images/caracters/enemies/fireball/fireball_idle_{0}.png",
+                        "walk_down": {
+                            "image": "images/caracters/enemies/fireball/fireball_walk_down_{0}.png",
                             "columnas": 1,
                             "filas": 1,
                             "quantity":2,
@@ -698,10 +698,10 @@
                             "last_frame_loop": false
                         }
                     },
-                    "width": 10,
-                    "heigth": 10,
-                    "speed_walk": 12,
-                    "speed_run": 2,
+                    "width": 30,
+                    "heigth": 30,
+                    "speed_walk": 25,
+                    "speed_run": 25,
                     "frame_rate_ms": 30,
                     "move_rate_ms": 10,
                     "trigger_range": 250,
