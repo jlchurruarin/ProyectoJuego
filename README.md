@@ -6,7 +6,7 @@
 - Cuenta con menú de configuración para volumen de musica y sonidos.
 - Permite seleccionar entre dos personajes con diferentes habilidades
 - Los niveles se configuran desde archivos json, lo cual permite adaptador con facilidad sin modificar el codigo
-- Cuanta con un ranking de puntuación el cual es almacenado en una base de datos SQLite
+- Cueanta con un ranking de puntuación el cual es almacenado en una base de datos SQLite
 
 ## Video demostrativo
 
