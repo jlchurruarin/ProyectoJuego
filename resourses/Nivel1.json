@@ -427,11 +427,6 @@
                     "id": "Teleporter",
                     "pos_x": 2700,
                     "pos_y": 400
-                },
-                {
-                    "id": "Teleporter",
-                    "pos_x": 400,
-                    "pos_y": 500
                 }
             ]
         }
