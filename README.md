@@ -6,7 +6,7 @@
 - Cuenta con menú de configuración para volumen de musica y sonidos.
 - Permite seleccionar entre dos personajes con diferentes habilidades
 - Los niveles se configuran desde archivos json, lo cual permite adaptador con facilidad sin modificar el codigo
-- Cueanta con un ranking de puntuación el cual es almacenado en una base de datos SQLite
+- Cuenta con un ranking de puntuación el cual es almacenado en una base de datos SQLite
 
 ## Video demostrativo
 
@@ -14,13 +14,12 @@ https://user-images.githubusercontent.com/75645175/206935096-a5d079ae-dd25-45a6-
 
 ## Requisitos
 
-
 - Python 3.10
 - Pygame
 
 ### Instalación
 
-- Realizar instalación de Python ([como instalar python en Windows](https://docs.python.org/3/using/windows.html#installation-steps "como instalar python en Windows"))
+- Realizar instalación de Python ([Como instalar python en Windows](https://docs.python.org/3/using/windows.html#installation-steps "como instalar python en Windows") | [Como instalar python en Linux](https://docs.python.org/3/using/unix.html#on-linux "como instalar python en Linux"))
 - Realizar instalación de pygame ([Como instalar pygame](https://www.pygame.org/wiki/GettingStarted#Pygame%20Installation "Como instalar pygame"))
 - Descargar el proyecto en formato zip y descomprimir o desde consola utilizando git con el siguiente comando
 ```sh
