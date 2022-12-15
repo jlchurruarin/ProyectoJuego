@@ -11,6 +11,14 @@ class Dust(Enemy):
     def __init__(self,master_form, x, y, config, 
                     f_add_points, f_get_coords_player, f_get_game_volume, lista_plataformas):
 
+        '''
+        Clase que representa al enemigo Dust
+
+        Recibe por parametro el formulario padre, la posición x, la posición y, la configuración del objeto (desde game_config.json)
+        la funcion del juego que agrega puntos, la funcion que obtiene las coordenadas del jugador, 
+        la funcion que obtiene el volumen y la lista del plataformas del nivel
+        '''
+
         for item in config:
             setattr(self, item, config[item])
 
@@ -74,6 +82,9 @@ class Dust(Enemy):
     
     @direction.setter
     def direction(self, new_direction):
+        '''
+        Setter de dirección, se utiliza para cambiar la animación en el caso que cambie la direción
+        '''
         if self._direction != new_direction:
             self._direction = new_direction
             if self.animation == self.walk_l:
@@ -88,17 +99,23 @@ class Dust(Enemy):
         #print(str(self.rect_ground_collition.x) + " - " + str(self.rect_ground_collition.y))
 
     def do_movement(self, delta_ms):
-        
+        '''
+        Método que realiza el movimiento del objeto
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamado
+        '''
+
         self.tiempo_transcurrido_move += delta_ms
         if(self.tiempo_transcurrido_move >= self.move_rate_ms):
 
-            if self.is_player_near and not self.muerto:
+            if self.is_player_near and not self.muerto:     #En el caso que el jugador este cerca, modificamos el movimiento a la velocidad de speed_run
                 coords = self.f_get_coords_player()
                 if coords[0] > self.rect_ground_collition.x:
                     self.move_x = self.speed_run
                 else:
                     self.move_x = -self.speed_run
-            elif not self.is_player_near and not self.muerto:
+            
+            elif not self.is_player_near and not self.muerto:   #En el caso que el jugador no este cerca, se mueve aleatoriamente
                 if self.move_restante[0] == 0 and self.move_restante[1] == 0:
                     self.move_restante = [random.randint(
                                             self.inicial_rect_x-self.rect_ground_collition.x-self.walk_range[0], 
@@ -128,16 +145,31 @@ class Dust(Enemy):
         return super().do_movement(delta_ms)
 
     def do_animation(self, delta_ms):
+        '''
+        Método que muestra la animación del objeto
 
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamado
+        '''
         super().do_animation(delta_ms)
 
     def run_to_player(self):
+        '''
+        Método que hace que el enemigo corra hacia el jugador
+        '''
         self.is_player_near = True
 
     def respawn(self):
+        '''
+        Método que realiza un respawn del enemigo
+        '''
         self.move_restante = [0,0]
         return super().respawn()
 
     def add_x(self, delta_x):
+        '''
+        Método que agrega un valor a la posición x del objeto, se utiliza cuando el jugador se mueve
+
+        Recibe por parametro el valor de x a sumar a la posición del objeto
+        '''
         self.inicial_rect_x += delta_x
         super().add_x_move(delta_x)

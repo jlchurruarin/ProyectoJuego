@@ -18,7 +18,11 @@ class EnemyController(Controller):
     def generar_enemigo(self, enemigo):
         pass
 
-    def verificar_triggers(self, f_player_get_coords):
+    def verificar_triggers(self, f_player_get_coords)-> None:
+        '''
+        Método que verifica si el jugador se encuentra dentro del rango de acción de cada enemigo 
+        y ejecuta la función trigger del enemigo en el caso que el jugador se encuentre dentro del rango
+        '''
         coords = f_player_get_coords()
         for enemy in self.get_list():
             

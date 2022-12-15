@@ -5,7 +5,15 @@ import pygame
 class Trampa(GameObject):
 
     def __init__(self, master_form, x, y, w, h, animation_dict, frame_rate_ms=0, move_rate_ms=0):
+        '''
+        Clase que representa a las trampas del juego
+        Recibe por parametro el formulario padre, la posición x, la posición y, el ancho en pixeles, el alto en pixeles,
+        un diccionario con la configuración de la animación, el ratio de actualización de frames en milisegundos y el ratio de movimiento en misilegundos
+        '''
+
         super().__init__(master_form, x, y, w, h, frame_rate_ms, move_rate_ms)
+
+
 
         self.stay = Animacion(
             path=animation_dict["image"],
@@ -34,18 +42,18 @@ class Trampa(GameObject):
 
         self.render()
 
-    def do_animation(self,delta_ms):
-        self.tiempo_transcurrido_animation += delta_ms
-        if(self.tiempo_transcurrido_animation >= self.frame_rate_ms):
-            self.tiempo_transcurrido_animation = 0
-            self.image_background = self.animation.next_frame()
-        self.render()
-
-    def update(self,delta_ms):
-        super().update()
+    def update(self,delta_ms)-> None:
+        '''
+        Método que realiza el update del objeto
+        '''
         self.do_animation(delta_ms)
 
-    def add_x(self,delta_x):
+    def add_x(self,delta_x)->None:
+        '''
+        Método que mueve el objeto sobre el eje x
+
+        Recibe la cantidad de pixeles que se debe mover el objeto (admite positivos -> y negativos <-)
+        '''
         super().add_x(delta_x)
         for rect in self.rects:
             rect.x += delta_x

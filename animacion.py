@@ -91,8 +91,6 @@ class Animacion:
             else:
                 self.frame_variacion = -1 * self.frame_variacion
                 self.frame += self.frame_variacion
-                print("frame: {0}".format(self.frame))
-                print("variacion: {0}".format(self.frame_variacion))
                 retorno = self.frames_list[self.frame - 1]
         elif self.last_frame_loop:  # Cuando llega al final de la animación muestra el ultimo fotoframa indefinidamente
             retorno = self.frames_list[self.frame - 1]

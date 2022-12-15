@@ -11,6 +11,15 @@ class Enemy(GameObject):
     def __init__(self,master_form, x, y, w, h, speed_walk, speed_run,
                     frame_rate_ms, move_rate_ms, respawn_time, dead_points, f_add_points, lista_plataformas):
 
+        '''
+        Clase que representa a un enemigo generico.
+
+        Recibe por parametro el formulario padre, la posición x, la posición y, el ancho, el alto, 
+        la velocidad de movimiento al caminar, la velocidad de movimiento al corre, cada cuantos milisegundos se actualizará la animación, 
+        cada cuantos milisegundos se actualizará el movimiento, el tiempo de respawn, 
+        los puntos que da el enemigo al morir, la funcion del juego que agrega los puntos y la lista de plataformas
+        '''
+
         super().__init__(master_form=master_form, x=x, y=y, w=w, h=h, frame_rate_ms=frame_rate_ms, move_rate_ms=move_rate_ms)
    
         self.speed_walk =  speed_walk
@@ -35,27 +44,36 @@ class Enemy(GameObject):
 
         self.render()
 
+    def add_x_move(self,delta_x)->None:
+        '''
+        Método que realiza el movimiento del objeto en el eje x (cuando el objeto se mueve por su "voluntad" y no por el movimiento del personaje)
 
-    def recolectado(self):
-        # Reproducir sonido?
-        self.f_add_points(1000)
-        self.tiempo_transcurrido_muerto = 0
-        self.muerto = True
-
-
-    def add_x_move(self,delta_x):
+        Recibe los pixeles en x que se moverá
+        '''
         for rect in self.rects:
             rect.x += delta_x
         super().add_x(delta_x)
 
 
-    def add_y_move(self,delta_y):
+    def add_y_move(self,delta_y)->None:
+        '''
+        Método que realiza el movimiento del objeto en el eje y (cuando el objeto se mueve por su "voluntad" y no por el movimiento del personaje)
+
+        Recibe los pixeles en y que se moverá
+        '''
         for rect in self.rects:
             rect.y += delta_y
         super().add_y(delta_y)
 
 
-    def is_on_platform(self):
+    def is_on_platform(self)->bool:
+        '''
+        Método que devuelve si el objeto está sobre una plataforma.
+        En el caso de colisionar con la misma, corrige la posición para evitar sobre posición con la plataforma
+    
+        Devuelve True en el caso de que el enemigo este sobre la plataforma, y False en el caso que no
+        '''
+
         lista_plataformas = self.lista_plataformas
         retorno = False
 
@@ -72,11 +90,21 @@ class Enemy(GameObject):
                     break
         return retorno
 
-    def update(self, delta_ms=None):
+    def update(self, delta_ms=None)-> None:
+        '''
+        Método que realiza el update del objeto (movimiento y animación)
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamada al método
+        '''
         self.do_movement(delta_ms)
         self.do_animation(delta_ms)
 
-    def do_movement(self, delta_ms):
+    def do_movement(self, delta_ms)->None:
+        '''
+        Método que realiza el movimiento del objeto segun su ratio de movimiento (move rate)
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamada al método
+        '''
         self.tiempo_transcurrido_muerto += delta_ms
 
         if(self.tiempo_transcurrido_move >= self.move_rate_ms):
@@ -97,14 +125,18 @@ class Enemy(GameObject):
             if(not self.is_on_platform()):
                 self.add_y_move(self.gravity)
 
-    def do_animation(self, delta_ms):
-        super().do_animation(delta_ms)
 
-    def draw(self):
+    def draw(self)->None:
+        '''
+        Método que dibuja el objeto en pantalla
+        '''
         if not self.muerto:
             super().draw()
 
-    def respawn(self):
+    def respawn(self)->None:
+        '''
+        Método que realiza un respawn del enemigo
+        '''
         if self.respawn_time > 0:
             self.tiempo_transcurrido_proyectil = 0
             self.disparando = True
@@ -113,15 +145,23 @@ class Enemy(GameObject):
             self.add_y_move(self.inicial_rect_y - self.rect_ground_collition.y)
             self.muerto = False
 
-    def hit(self):
+    def hit(self)->None:
+        '''
+        Método que es llamado cuando el objeto es golpeado
+        Resta vidas y en el caso de morir agrega los puntos al juego
+        '''
         super().hit()
         if self.muerto:
             self.f_add_points(self.dead_points)
 
 
-    def trigger(self):
+    def trigger(self)->None:
+        '''
+        Método que es llamado cuando el jugador se encuentra dentro del largo de acción del enemigo
+        Define la dirección correcta en la cual se encuentra el jugador y llama a la función self.f_trigger_action() del enemigo 
+        (variable que contiene la función que realiza una acción espefica de cada enemigo)
+        '''
         coords = self.f_get_coords_player()
-        #print(str(coords[0]) + " - " + str(coords[1]))
         if coords[0] > self.x:
             self.direction = DIRECTION_R
             self.f_trigger_action()

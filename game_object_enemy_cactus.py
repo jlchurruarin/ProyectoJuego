@@ -10,6 +10,14 @@ class Cactus(Enemy):
     def __init__(self,master_form, x, y, config, 
                     f_add_points, f_add_bullet, f_get_coords_player, f_get_game_volume, lista_plataformas):
 
+        '''
+        Clase que representa al enemigo Cactus
+
+        Recibe por parametro el formulario padre, la posición x, la posición y, la configuración del objeto (desde game_config.json)
+        la funcion del juego que agrega puntos, la funcion del nivel que agrega un proyectil, la funcion que obtiene las coordenadas del jugador, 
+        la funcion que obtiene el volumen y la lista del plataformas del nivel
+        '''
+
         for item in config:
             setattr(self, item, config[item])
 
@@ -72,6 +80,10 @@ class Cactus(Enemy):
     
     @direction.setter
     def direction(self, new_direction):
+        '''
+        Setter de dirección, se utiliza para cambiar la animación en el caso que cambie la direción
+        '''
+
         if self._direction != new_direction:
             self._direction = new_direction
             if self.animation == self.idle_r:
@@ -82,21 +94,40 @@ class Cactus(Enemy):
         #print(str(self.rect_ground_collition.x) + " - " + str(self.rect_ground_collition.y))
 
     def do_movement(self, delta_ms):
+        '''
+        Método que realiza el movimiento del objeto
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamado
+        '''
+
         self.tiempo_transcurrido_move += delta_ms
         return super().do_movement(delta_ms)
 
     def do_animation(self, delta_ms):
+        '''
+        Método que muestra la animación del objeto
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamado
+        '''
         self.tiempo_transcurrido_proyectil += delta_ms
         if self.tiempo_transcurrido_proyectil > self.proyectil_delay_time:
             self.disparando = False
         super().do_animation(delta_ms)
 
     def shoot(self):
+        '''
+        Método que dispara un proyectil desde la posición del objeto hacia la dirección del personaje
+        '''
         if not self.disparando:
             self.f_add_bullet(owner=self, x=self.x, y=self.y, id=self.proyectil_id, direction=self.direction)
             self.tiempo_transcurrido_proyectil = 0
             self.disparando = True
 
     def add_x(self, delta_x):
+        '''
+        Método que agrega un valor a la posición x del objeto, se utiliza cuando el jugador se mueve
+
+        Recibe por parametro el valor de x a sumar a la posición del objeto
+        '''
         self.inicial_rect_x += delta_x
         super().add_x_move(delta_x)

@@ -43,7 +43,12 @@ class FormNivelCompleto(Form):
         self.lista_widget = [self.btn_continuar, self.puntaje, self.vidas_restantes, self.tiempo_restante, self.titulo, self.subtitulo]
 
 
-    def update(self, lista_eventos, keys_pressed=None, delta_ms=None):
+    def update(self, lista_eventos, keys_pressed=None, delta_ms=None)-> None:
+        '''
+        Método que realiza el update del formulario llamando al update de cada objeto que contiene
+
+        Recibe por parametro la lista de eventos, las teclas que estan presionadas y el tiempo en milisegundos que paso desde el ultimo llamado
+        '''
         if self.form_data["vidas_restantes"] == 0:
             self.titulo.set_text("¡Has muerto!")
         else:
@@ -61,11 +66,19 @@ class FormNivelCompleto(Form):
 
 
     def draw(self): 
+        '''
+        Método que dibuja los objetos del formulario en pantalla
+        '''
         super().draw()
         for aux_widget in self.lista_widget: 
             aux_widget.draw()
 
     def cargar_siguiente_nivel(self, parametro):
+        '''
+        Método que realiza la carga del nivel siguiente
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.set_active(self.form_data["last_form"])
         if self.form_data["vidas_restantes"] == 0:
             self.form_data["last_form"] = "MenuPrincipal"

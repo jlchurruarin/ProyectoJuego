@@ -32,7 +32,10 @@ class FormMenuConfiguracion(Form):
         self.set_form_sounds("music_volumen",1.0)
         self.set_form_sounds("effects_volumen",1.0)
 
-    def activate_form(self):
+    def activate_form(self)->None:
+        '''
+        Método que inicializa los objetos del formulario
+        '''
 
         ANCHO_BOTON = self.botones_ancho
         ALTO_BOTON = self.botones_alto
@@ -93,7 +96,12 @@ class FormMenuConfiguracion(Form):
         self.last_music_volumen = self.form_sounds["music_volumen"] 
         super().activate_form()
         
-    def update(self, lista_eventos, keys_pressed=None, delta_ms=None):
+    def update(self, lista_eventos:list, keys_pressed:list=None, delta_ms:int=None)->None:
+        '''
+        Método que realiza el update del formulario llamando al update de cada objeto que contiene
+
+        Recibe por parametro la lista de eventos, las teclas que estan presionadas y el tiempo en milisegundos que paso desde el ultimo llamado
+        '''
         if self.tiempo_evita_doble_click >= 0:
             self.tiempo_evita_doble_click -= delta_ms
             lista_eventos = []
@@ -101,33 +109,55 @@ class FormMenuConfiguracion(Form):
         for aux_widget in self.lista_widget:
             aux_widget.update(lista_eventos, delta_ms)
 
-    def draw(self): 
+    def draw(self)->None: 
+        '''
+        Método que dibuja los objetos del formulario en pantalla
+        '''
         super().draw()
         for aux_widget in self.lista_widget:    
             aux_widget.draw()
 
-    def cancelar(self, param=None):
-        #TODO setear volumen anterior
+    def cancelar(self, param=None)-> None:
+        '''
+        Método que cancela la modificación realizada en los sonidos
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.set_form_sounds("effects_state", self.last_effects_state)
         self.set_form_sounds("music_state", self.last_music_state)
         self.set_form_sounds("effects_volumen", self.last_effects_volumen)
         self.set_form_sounds("music_volumen", self.last_music_volumen)
         self.set_active("MenuPrincipal")
 
-    def guardar(self, param=None):
+    def guardar(self, param=None)-> None:
+        '''
+        Método que vuelve al menu principal
+        '''
         self.set_active("MenuPrincipal")
 
-    def chk_sounds_click(self):
+    def chk_sounds_click(self)-> None:
+        '''
+        Método que cambiar el valor de los efectos de sonido (habilitados/deshabilitados)
+        '''
         self.set_form_sounds("effects_state",not self.form_sounds["effects_state"])
         self.active = True
 
-    def chk_music_click(self):
+    def chk_music_click(self)-> None:
+        '''
+        Método que cambiar el valor de la musica (habilitados/deshabilitados)
+        '''
         self.set_form_sounds("music_state",not self.form_sounds["music_state"])
         self.active = True
 
-    def set_volume_sounds(self, value):
+    def set_volume_sounds(self, value)->None:
+        '''
+        Método que modifica el volumen de los efectos de sonido
+        '''
         self.set_form_sounds("effects_volumen",value/100)
 
-    def set_volume_music(self, value):
+    def set_volume_music(self, value)->None:
+        '''
+        Método que modifica el volumen de la musica
+        '''
         self.set_form_sounds("music_volumen",value/100)
         self.background_sound.set_volume(self.get_music_volumen())

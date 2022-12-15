@@ -31,6 +31,9 @@ class GameObject(Widget):
 
     @animation.setter
     def animation(self, new_animation):
+        '''
+        Setter de animation el cual vuelve a 0 el frame cuando la animación cambia
+        '''
         for item_animation in self.animations:
             item_animation.reset_frame()
         self._animation = new_animation
@@ -42,14 +45,28 @@ class GameObject(Widget):
             self.image_background = self.animation.next_frame()
         self.render()
 
-    def add_x(self,delta_x):
+    def add_x(self,delta_x)->None:
+        '''
+        Método que mueve el objeto sobre el eje x
+
+        Recibe la cantidad de pixeles que se debe mover el objeto (admite positivos -> y negativos <-)
+        '''
         self.x += delta_x
 
-    def add_y(self,delta_y):
+    def add_y(self,delta_y)->None:
+        '''
+        Método que mueve el objeto sobre el eje y
+
+        Recibe la cantidad de pixeles que se debe mover el objeto (admite positivos para mover hacia abajo y negativos para mover hacia arriba)
+        '''
         self.last_y = self.y
         self.y += delta_y
 
-    def render(self):
+    def render(self)->None:
+        '''
+        Método que realiza el render del objeto
+        '''
+
         self.slave_surface = pygame.Surface((self.w,self.h), pygame.SRCALPHA)
         self.slave_rect = self.slave_surface.get_rect()
         self.slave_rect.x = self.x
@@ -64,21 +81,29 @@ class GameObject(Widget):
         if self.color_border:
             pygame.draw.rect(self.slave_surface, self.color_border, self.slave_surface.get_rect(), 2)
 
-    def draw(self):
+    def draw(self)-> None:
+        '''
+        Método que dibuja en pantalla el objeto y sus rects en el caso que DEBUG este activo
+        '''
         super().draw()
         if DEBUG:
             for numero,rect in enumerate(self.rects):
                 pygame.draw.rect(self.master_form.surface,C_RECTS[numero],rect)
     
-    def hit(self):
+    def hit(self)-> None:
+        '''
+        Método que es llamada al golpear el objeto, le resta vidas y cambia de estado a muerto en el caso que las vidas sean 0
+        '''
         if not self.muerto:
             self.lives -= 1
             if self.lives <= 0:
                 self.muerto = True
                 self.tiempo_transcurrido_muerto = 0
 
-    def actualizar_volumen(self, music_onoff, sounds_onoff, volumen_music, volumen_sounds):
-        
+    def actualizar_volumen(self, music_onoff, sounds_onoff, volumen_music, volumen_sounds)-> None:
+        '''
+        Método que actualzia el volumen de los sonidos del objeto
+        '''
         if not sounds_onoff:
             volumen_sounds = 0
 
@@ -86,5 +111,8 @@ class GameObject(Widget):
             self.sounds[sound].set_volume(volumen_sounds)
 
 
-    def update(self, delta_ms=None):
+    def update(self, delta_ms=None)-> None:
+        '''
+        Método que realiza el update del objeto
+        '''
         self.render()

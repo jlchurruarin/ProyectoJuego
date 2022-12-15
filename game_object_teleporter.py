@@ -10,6 +10,13 @@ class Teleporter(GameObject):
 
     def __init__(self, master_form, x, y, config, f_get_effects_state, f_get_value_volume_sounds):
 
+        '''
+        Clase que representa al portal teletransportador
+
+        Recibe por parametro el formulario padre, la posición x, la posición y, la configuración del objeto (desde game_config.json), 
+        una función que devuelve el estado de los efectos de sonido y una función que devuelve el nivel de volumen de los efectos de sonido
+        '''
+
         for item in config:
             setattr(self, item, config[item])
 
@@ -60,23 +67,28 @@ class Teleporter(GameObject):
 
         self.render()
 
-    def do_animation(self,delta_ms):
-        self.tiempo_transcurrido_animation += delta_ms
-        if(self.tiempo_transcurrido_animation >= self.frame_rate_ms):
-            self.tiempo_transcurrido_animation = 0
-            self.image_background = self.animation.next_frame()
-        self.render()
 
     def update(self,delta_ms):
-        super().update()
+        '''
+        Método que realiza el update del objeto
+        '''
         self.do_animation(delta_ms)
 
     def add_x(self,delta_x):
+        '''
+        Método que mueve el objeto sobre el eje x
+
+        Recibe la cantidad de pixeles que se debe mover el objeto (admite positivos -> y negativos <-)
+        '''
         super().add_x(delta_x)
         for rect in self.rects:
             rect.x += delta_x
 
     def hit(self):
+        '''
+        Método que reproduce el sonido del portal
+        se utiliza cuando el jugador toca el objeto
+        '''
         if self.f_get_effects_state():
             self.sounds["hit"].set_volume(self.f_get_value_volume_sounds())
             self.sounds["hit"].play()

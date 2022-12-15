@@ -12,6 +12,13 @@ class Botin(GameObject):
                     f_add_points, 
                     normal_loop=True, inverted_loop=False, last_frame_loop=False):
 
+        '''
+        Clase Botin, la cual contiene los objetos que son recolectables del juego
+
+        Recibe por parametro el formulario padre, la posición x y la posición y, 
+        un diccionario con la configuración del objeto y la referencia a una funcion para agregar puntos al juego
+        '''
+
         for item in config:
             setattr(self, item, config[item])
 
@@ -55,21 +62,45 @@ class Botin(GameObject):
         self.render()
 
     def recolectado(self):
-        # Reproducir sonido?
+        '''
+        Método de recolectado de objeto
+
+        Agrega los puntos y desaparece el objeto de pantalla
+        '''
         if not self.muerto:
             self.f_add_points(1000)
             self.muerto = True
-        #lista_plataformasself.lista_botines.remove(self)
+
 
     def do_movement(self, delta_ms):
+        '''
+        Método que realiza el movimiento del objeto
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamado
+        '''
+
+        # Los objetos botin no tienen movimiento, de realiza un pass por compatibilidad
         pass
 
+
     def add_x(self,delta_x):
+        '''
+        Método que agrega un valor a la posición x del objeto, se utiliza cuando el jugador se mueve
+
+        Recibe por parametro el valor de x a sumar a la posición del objeto
+        '''
+
         super().add_x(delta_x)
         for rect in self.rects:
             rect.x += delta_x
 
     def update(self, delta_ms=None):
+        '''
+        Método que realiza el update del objeto (movimiento y animación)
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamado
+        '''
+        
         super().update()
         self.do_movement(delta_ms)
         self.do_animation(delta_ms)

@@ -9,6 +9,13 @@ class Bullet(GameObject):
     def __init__(self,master_form, owner, x, y, direction, config, 
                 f_get_effects_state, f_get_effects_volumen) -> None:
 
+        '''
+        Clase que representa a un proyectil
+
+        Recibe por parametro el formulario padre, el objeto dueño, posición x, posición y, la dirección, la configuración del objeto (desde game_config.json),
+        la función que devuelve el estado de los efectos de sonido y la función que devuelve el nivel de volumen de los efectos de sonido
+        '''
+
         for item in config:
             setattr(self, item, config[item])
 
@@ -64,12 +71,22 @@ class Bullet(GameObject):
 
         self.render()
 
-    def update(self, delta_ms):
+    def update(self, delta_ms)->None:
+        '''
+        Método que realiza el update del objeto (movimiento y animación)
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamada al método
+        '''
         self.do_movement(delta_ms)
         self.do_animation(delta_ms)
 
 
     def do_movement(self,delta_ms):
+        '''
+        Método que realiza el movimiento del objeto segun su ratio de movimiento (move rate)
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamada al método
+        '''
         self.tiempo_transcurrido_move += delta_ms
         if(self.tiempo_transcurrido_move >= self.move_rate_ms):
 
@@ -83,11 +100,21 @@ class Bullet(GameObject):
                 self.hit()
 
     def add_x(self, delta_x):
+        '''
+        Método que mueve el objeto sobre el eje x
+
+        Recibe la cantidad de pixeles que se debe mover el objeto (admite positivos -> y negativos <-)
+        '''
         super().add_x(delta_x)
         self.rect_kill_collition.x += delta_x
         
 
     def add_y(self, delta_y):
+        '''
+        Método que mueve el objeto sobre el eje y
+
+        Recibe la cantidad de pixeles que se debe mover el objeto (admite positivos para mover hacia abajo y negativos para mover hacia arriba)
+        '''
         super().add_y(delta_y)
         self.rect_kill_collition.y += delta_y
 
