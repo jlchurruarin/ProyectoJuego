@@ -13,14 +13,6 @@ class FormJuegoCompleto(Form):
                     f_game_add_ranking,
                     active=False):
 
-        ####
-        #self.form_data["last_form"] = "JuegoCompleto"
-        #self.form_data["nivel_puntuacion"] = 0
-        #self.form_data["total_tiempo_restante"] = 0
-        #self.form_data["vidas_restantes"] = 5
-        ####
-
-
         for item in config:
             setattr(self, item, config[item])
 
@@ -65,7 +57,12 @@ class FormJuegoCompleto(Form):
         self.lista_widget_nuevo_record = [self.titulo, self.subtitulo, self.text_name, self.mensaje, self.mensaje2, self.btn_cargar_record]
         self.lista_widget_fin_partida = [self.titulo, self.subtitulo, self.btn_continuar, self.puntaje, self.vidas_restantes, self.tiempo_restante]
 
-    def activate_form(self):
+    def activate_form(self)->None:
+        '''
+        Método que muestra el resumen de la partida o el formulario para ingresar el nombre 
+        en caso que el puntaje se encuentre dentro de los records del juego
+        '''
+
         super().activate_form()
         
         self.f_game_draw_bg()
@@ -90,8 +87,12 @@ class FormJuegoCompleto(Form):
             #No entra en el top, indicar en el form
 
 
-    def update(self, lista_eventos, keys_pressed=None, delta_ms=None):
+    def update(self, lista_eventos:list, keys_pressed:list=None, delta_ms:int=None)->None:
+        '''
+        Método que realiza el update del formulario llamando al update de cada objeto que contiene
 
+        Recibe por parametro la lista de eventos, las teclas que estan presionadas y el tiempo en milisegundos que paso desde el ultimo llamado
+        '''
         self.puntaje.set_text("Puntuación: {0}".format(self.form_data["nivel_puntuacion"]))
         self.vidas_restantes.set_text("Vidas restantes: {0}".format(self.form_data["vidas_restantes"]))
         self.tiempo_restante.set_text("Tiempo restante: {0}".format(self.form_data["total_tiempo_restante"]))
@@ -104,15 +105,30 @@ class FormJuegoCompleto(Form):
             aux_widget.update(lista_eventos, delta_ms)
 
 
-    def draw(self): 
+    def draw(self)->None:
+        '''
+        Método que dibuja los objetos del formulario en pantalla
+        '''
         super().draw()
         for aux_widget in self.lista_widget: 
             aux_widget.draw()
 
     def cargar_siguiente_nivel(self, parametro):
+        '''
+        Método que carga el siguiente nivel o formulario
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.set_active(self.form_data["last_form"])
 
     def cargar_record(self, param):
+        '''
+        Método que envia el nombre y la información de la partida para cargarla en la base de datos, 
+
+        En el caso que el nombre este vacio muestra un error en pantalla
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         if len(self.text_name.texto) == 0:
             if self.error_msg not in self.lista_widget:
                 self.lista_widget.append(self.error_msg)

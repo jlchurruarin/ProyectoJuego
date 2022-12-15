@@ -110,17 +110,7 @@ while True:
             game.draw_bg()
             form.update(lista_eventos=lista_eventos, keys_pressed=keys, delta_ms=delta_ms)
             form.draw()
-
-    # enemigos update
-    # player dibujarlo
-    # dibujar todo el nivel
+            
 
     pygame.display.flip()
-     
-    #print(delta_ms)
-
-
-#TODO
-#Al caer no podes volver al menu principal
-#Al perder, el resumen de nivel indica "nivel superador"
-#Modificar hitbox de trampa cactus
+    

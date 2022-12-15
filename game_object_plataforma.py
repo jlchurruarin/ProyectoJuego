@@ -8,6 +8,13 @@ class Platform(GameObject):
 
     def __init__(self, master_form, x, y, config, flip=False):
 
+        '''
+        Clase que representa a las plataformas
+
+        Recibe por parametro el formulario padre, la posición x, la posición y, 
+        la configuración del objeto (desde game_config.json) y parametro flip que indica si la imagen debe espejarse en el eje x
+        '''
+        
         for item in config:
             setattr(self, item, config[item])
 
@@ -24,7 +31,12 @@ class Platform(GameObject):
         
         self.lista_plataformas.append(self)
 
-    def add_x(self,delta_x):
+    def add_x(self,delta_x)->None:
+        '''
+        Método que agrega un valor a la posición x del objeto, se utiliza cuando el jugador se mueve
+
+        Recibe por parametro el valor de x a sumar a la posición del objeto
+        '''
         super().add_x(delta_x)
         for rect in self.rects:
             rect.x += delta_x

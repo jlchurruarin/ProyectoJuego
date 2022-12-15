@@ -74,12 +74,6 @@ class Form():
         else:
             self.background_sound.stop()
 
-        #if active != self._active:
-        #    self.old_value_chk_sounds = self.f_get_value_chk_sounds()
-        #    self.old_value_chk_music = self.f_get_value_chk_music()
-        #    self.old_value_volume_sounds = self.f_get_value_volume_sounds()
-        #    self.old_value_volume_music = self.f_get_value_volume_music()
-
         self._active = active
 
     def get_music_state(self):

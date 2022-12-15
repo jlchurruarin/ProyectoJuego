@@ -66,7 +66,12 @@ class FormMenuPrincipal(Form):
         self.f_game_set_player_id = f_game_set_player_id
         
 
-    def update(self, lista_eventos, keys_pressed=None, delta_ms=None):
+    def update(self, lista_eventos:list, keys_pressed:list=None, delta_ms:int=None)->None:
+        '''
+        Método que realiza el update del formulario llamando al update de cada objeto que contiene
+
+        Recibe por parametro la lista de eventos, las teclas que estan presionadas y el tiempo en milisegundos que paso desde el ultimo llamado
+        '''
         if not self.form_data["pause"]:
             for aux_widget in self.lista_widget_menu:    
                 aux_widget.update(lista_eventos)
@@ -74,7 +79,10 @@ class FormMenuPrincipal(Form):
             for aux_widget in self.lista_widget_pausa:    
                 aux_widget.update(lista_eventos)
 
-    def draw(self): 
+    def draw(self)->None:
+        '''
+        Método que dibuja los objetos del formulario en pantalla
+        '''
         super().draw()
         if not self.form_data["pause"]:
             for aux_widget in self.lista_widget_menu:    
@@ -83,45 +91,90 @@ class FormMenuPrincipal(Form):
             for aux_widget in self.lista_widget_pausa:    
                 aux_widget.draw()
 
-    def cargar_nivel(self, parametro):
+    def cargar_nivel(self, parametro:str)->None:
+        '''
+        Método que realiza la carga el nivel pasado por parametro
+
+        Recibe por parametroel nombre del nivel que debe cargarse
+        '''
         if parametro == "Nivel1":
             self.form_data["nivel_puntuacion"] = 0
-            #self.form_data["vidas_restantes"]
             self.form_data["total_tiempo_restante"] = 0
         self.cargar_player_id()
         self.set_active(parametro)
             
-    def cargar_player_id(self):
+    def cargar_player_id(self)->None:
+        '''
+        Método que setea el personaje seleccionado
+        '''
         if self.ninjagirl_value and not self.form_data["pause"]:
             self.f_game_set_player_id("ninjagirl")
         elif self.cowgirl_value and not self.form_data["pause"]:
             self.f_game_set_player_id("cowgirl")
 
-    def continuar_nivel(self, parametro):
+    def continuar_nivel(self, parametro)->None:
+        '''
+        Método que deshabilita el menu y vuelve al nivel (quita la pausa)
+        
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.set_active(self.form_data["last_form"])
 
-    def mostrar_clasificacion(self, parametro):
+    def mostrar_clasificacion(self, parametro)->None:
+        '''
+        Método que muestra el formulario de Highscore
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.cargar_player_id()
         self.set_active("MenuHighscore")
 
-    def mostrar_configuracion(self, parametro):
+    def mostrar_configuracion(self, parametro)->None:
+        '''
+        Método que muestra el formulario de configuración
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.cargar_player_id()
         self.set_active("MenuConfiguracion")
 
     def mostrar_ayuda(self, parametro):
+        '''
+        Método que muestra el formulario de ayuda
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.cargar_player_id()
         self.set_active("MenuAyuda")
 
     def salir(self, parametro):
+        '''
+        Método que cierra el juego
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         pygame.quit()
         sys.exit()
         
-    def ninjagirl_is_on(self):
+    def ninjagirl_is_on(self)->bool:
+        '''
+        Método que devuelve si esta seleccionada la persona ninja
+
+        Devuelve True si esta seleccionada y False si no
+        '''
         return self.ninjagirl_value
 
-    def cowgirl_is_on(self):
+    def cowgirl_is_on(self)->bool:
+        '''
+        Método que devuelve si esta seleccionada la persona vaquera
+
+        Devuelve True si esta seleccionada y False si no
+        '''
         return self.cowgirl_value
 
-    def personaje_click(self):
+    def personaje_click(self)->None:
+        '''
+        Método que intercambia el personaje selecciado
+        '''
         self.ninjagirl_value = not self.ninjagirl_value
         self.cowgirl_value = not self.cowgirl_value

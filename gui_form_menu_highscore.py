@@ -45,6 +45,10 @@ class FormMenuHighscore(Form):
         self.lista_widget = []
         
     def activate_form(self):
+        '''
+        Método que inicializa los objetos del formulario
+        '''
+
         self.lista_widget = []
 
         self.lista_widget = [self.titulo_posicion,
@@ -54,19 +58,24 @@ class FormMenuHighscore(Form):
                             self.btn_ok]
 
         for pos, item in enumerate(self.f_game_get_ranking()):
-            self.titulo_posicion = Label(master_form=self, x=self.width/2-self.label_ancho*2, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text="{}".format(pos+1), font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
-            self.titulo_nombre = Label(master_form=self, x=self.width/2-self.label_ancho*1, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text=item["nombre"], font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
-            self.titulo_puntaje = Label(master_form=self, x=self.width/2, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text=str(item["puntaje"]), font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
-            self.titulo_tiempo = Label(master_form=self, x=self.width/2+self.label_ancho, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text=str(item["tiempo_restante"]), font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
+            item_posicion = Label(master_form=self, x=self.width/2-self.label_ancho*2, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text="{}".format(pos+1), font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
+            item_nombre = Label(master_form=self, x=self.width/2-self.label_ancho*1, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text=item["nombre"], font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
+            item_puntaje = Label(master_form=self, x=self.width/2, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text=str(item["puntaje"]), font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
+            item_tiempo = Label(master_form=self, x=self.width/2+self.label_ancho, y=100+(50*pos), w=self.label_ancho, h=self.label_alto, text=str(item["tiempo_restante"]), font="Arial", font_size=20, font_color=C_BLACK, image_background=self.label_bg)
 
-            self.lista_widget.append(self.titulo_posicion)
-            self.lista_widget.append(self.titulo_nombre)
-            self.lista_widget.append(self.titulo_puntaje)
-            self.lista_widget.append(self.titulo_tiempo)
+            self.lista_widget.append(item_posicion)
+            self.lista_widget.append(item_nombre)
+            self.lista_widget.append(item_puntaje)
+            self.lista_widget.append(item_tiempo)
             
         return super().activate_form()
 
     def update(self, lista_eventos, keys_pressed=None, delta_ms=None):
+        '''
+        Método que realiza el update del formulario llamando al update de cada objeto que contiene
+
+        Recibe por parametro la lista de eventos, las teclas que estan presionadas y el tiempo en milisegundos que paso desde el ultimo llamado
+        '''
         if self.tiempo_evita_doble_click >= 0:
             self.tiempo_evita_doble_click -= delta_ms
             lista_eventos = []
@@ -75,12 +84,17 @@ class FormMenuHighscore(Form):
             aux_widget.update(lista_eventos, delta_ms)
 
     def draw(self): 
+        '''
+        Método que dibuja los objetos del formulario en pantalla
+        '''
         super().draw()
         for aux_widget in self.lista_widget:    
             aux_widget.draw()
 
-    def cargar_nivel(self, parametro):
-        self.set_active(parametro)
+    def volver_atras(self, parametro):
+        '''
+        Método que carga el menu principal
 
-    def volver_atras(self, on_click_param):
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.set_active("MenuPrincipal")

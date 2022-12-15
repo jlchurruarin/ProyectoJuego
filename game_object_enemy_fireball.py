@@ -11,6 +11,14 @@ class Fireball(Enemy):
     def __init__(self,master_form, x, y, config, 
                     f_add_points, f_get_coords_player, f_get_game_volume, lista_plataformas):
 
+        '''
+        Clase que representa al enemigo fireball
+
+        Recibe por parametro el formulario padre, la posición x, la posición y, la configuración del objeto (desde game_config.json)
+        la funcion del juego que agrega puntos, la funcion que obtiene las coordenadas del jugador, 
+        la funcion que obtiene el volumen y la lista del plataformas del nivel
+        '''    
+
         for item in config:
             setattr(self, item, config[item])
 
@@ -74,6 +82,9 @@ class Fireball(Enemy):
     
     @direction.setter
     def direction(self, new_direction):
+        '''
+        Setter de dirección, se utiliza para cambiar la animación en el caso que cambie la direción
+        '''
         if self._direction != new_direction:
             self._direction = new_direction
             if self.animation == self.walk_down:
@@ -83,7 +94,15 @@ class Fireball(Enemy):
 
         #print(str(self.rect_ground_collition.x) + " - " + str(self.rect_ground_collition.y))
 
-    def update(self, delta_ms=None):
+    def do_movement(self, delta_ms):
+        '''
+        Método que realiza el movimiento del objeto
+
+        Recibe por parametro la diferencia de milisegundos desde el ultimo llamado
+        '''
+
+        #Definimos la direción segun el movimiento maximo
+
         if self.rect_daño_jugador.y < self.inicial_rect_y - self.max_y_movement:
             if self.move_y != self.speed_walk:
                 self.direction = DIRECTION_D
@@ -92,15 +111,12 @@ class Fireball(Enemy):
 
         elif self.rect_daño_jugador.y >= self.inicial_rect_y:
             if self.move_y != -self.speed_walk:
-                self.tiempo_hidden = random.randint(500, 6000)
+                self.tiempo_hidden = random.randint(500, 6000)  # Guardamos el tiempo que estará oculto 
                 self.hidden = True
                 self.direction = DIRECTION_U
 
             self.move_y = -self.speed_walk
-        return super().update(delta_ms)
 
-    def do_movement(self, delta_ms):
-        
         self.tiempo_transcurrido_move += delta_ms
         self.tiempo_transcurrido_hidden += delta_ms
         if(self.tiempo_transcurrido_move >= self.move_rate_ms):
@@ -116,18 +132,31 @@ class Fireball(Enemy):
         return super().do_movement(delta_ms)
 
     def add_x(self, delta_x):
+        '''
+        Método que agrega un valor a la posición x del objeto, se utiliza cuando el jugador se mueve
+
+        Recibe por parametro el valor de x a sumar a la posición del objeto
+        '''
         self.inicial_rect_x += delta_x
         super().add_x_move(delta_x)
 
-    def do_animation(self, delta_ms):
-
-        super().do_animation(delta_ms)
-
     def is_on_platform(self):
+        '''
+        Método que indica si está en una plataforma, 
+        por compatibilidad en este objeto siempre devolverá True para que no le aplique la gravedad
+        '''
         return True
 
     def hit(self):
+        '''
+        Método que se ejecuta cuando el objeto es golpeado, 
+        por compatibilidad hará un pass
+        '''
         pass
 
     def trigger(self):
+        '''
+        Método que se ejecuta cuando el objeto esta cerca del jugador, 
+        por compatibilidad hará un pass
+        '''
         pass

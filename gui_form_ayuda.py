@@ -11,13 +11,6 @@ class FormMenuAyuda(Form):
                     f_game_draw_bg,
                     active=False):
 
-        ####
-        #self.form_data["last_form"] = "JuegoCompleto"
-        #self.form_data["nivel_puntuacion"] = 0
-        #self.form_data["total_tiempo_restante"] = 0
-        #self.form_data["vidas_restantes"] = 5
-        ####
-
 
         for item in config:
             setattr(self, item, config[item])
@@ -87,36 +80,71 @@ class FormMenuAyuda(Form):
         self.lista_widget = [self.titulo, self.subtitulo, self.btn_historia, self.btn_personajes, self.btn_enemigos, self.btn_continuar]
         self.lista_widget_original = [self.titulo, self.subtitulo, self.btn_historia, self.btn_personajes, self.btn_enemigos, self.btn_continuar]
 
-    def activate_form(self):
+    def activate_form(self)->None:
+        '''
+        Método que activa el formulario y dibuja el fondo del juego
+        '''
         super().activate_form()
         self.f_game_draw_bg()
 
-    def update(self, lista_eventos, keys_pressed=None, delta_ms=None):
+    def update(self, lista_eventos:list, keys_pressed:list=None, delta_ms:int=None)->None:
+        '''
+        Método que realiza el update del formulario llamando al update de cada objeto que contiene
 
+        Recibe por parametro la lista de eventos, las teclas que estan presionadas y el tiempo en milisegundos que paso desde el ultimo llamado
+        '''
         for aux_widget in self.lista_widget:
             aux_widget.update(lista_eventos, delta_ms)
 
 
-    def draw(self): 
+    def draw(self)->None:
+        '''
+        Método que dibuja los objetos del formulario en pantalla
+        '''
         super().draw()
         for aux_widget in self.lista_widget: 
             aux_widget.draw()
 
-    def cargar_menu_principal(self, parametro):
+
+    def cargar_menu_principal(self, parametro)->None:
+        '''
+        Método que carga el menu principal
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.set_active("MenuPrincipal")
 
-    def mostrar_personajes(self, parametro):
+
+    def mostrar_personajes(self, parametro)->None:
+        '''
+        Método que muestra en pantalla la información de los personajes y sus caracteristicas
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.lista_widget = self.lista_widget_original.copy()
         for label in self.players:
             self.lista_widget.append(label)
         self.render()
         
+
     def mostrar_historia(self, parametro):
+        '''
+        Método que muestra en pantalla la historia del juego
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.lista_widget = self.lista_widget_original.copy()
         for label in self.historia_labels:
             self.lista_widget.append(label)
         self.render()
+
+
     def mostrar_enemigos(self, parametro):
+        '''
+        Método que muestra en pantalla los enemigos y sus caracteristicas
+
+        Recibe un parametro no utilizado, por compatibilidad
+        '''
         self.lista_widget = self.lista_widget_original.copy()
         for label in self.enemigos:
             self.lista_widget.append(label)
